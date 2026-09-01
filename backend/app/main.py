@@ -29,6 +29,7 @@ allowed_origins = [
 if frontend_origin:
     allowed_origins.append(frontend_origin)
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
