@@ -7,8 +7,10 @@ class Course(BaseModel):
     code: str
     name: str
     units: int
-    suggested_target_code: str
-    suggested_target_name: str
+    description: str = ""
+    learning_outcomes: str = ""
+    suggested_target_code: str = ""
+    suggested_target_name: str = ""
 
 
 class MappingCreate(BaseModel):

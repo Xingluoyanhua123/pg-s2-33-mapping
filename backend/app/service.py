@@ -1,5 +1,11 @@
+import json
 import logging
+import os
+import re
 from dataclasses import dataclass
+from urllib.error import HTTPError, URLError
+from urllib.request import Request as UrlRequest, urlopen
+
 from fastapi import HTTPException
 
 from .models import Course, CourseMapping, MappingCreate, VoiceCommandResult
@@ -18,6 +24,14 @@ class MappingService:
         self.course_repository = course_repository
         self.mapping_repository = mapping_repository
         self.sessions: dict[str, ConversationState] = {}
+        self.ollama_url = os.getenv(
+            "OLLAMA_CHAT_URL",
+            "http://127.0.0.1:11434/api/chat",
+        )
+        self.ollama_model = os.getenv(
+            "OLLAMA_MODEL",
+            "hermes3:8b",
+        )
 
     def list_courses(self) -> list[Course]:
         return self.course_repository.list_courses()
@@ -29,6 +43,15 @@ class MappingService:
         course = self.course_repository.get_course(request.source_course_id)
         if course is None:
             raise HTTPException(status_code=404, detail="Course not found")
+        if course.suggested_target_code == "PENDING":
+            raise HTTPException(
+                status_code=400,
+                detail=(
+                    f"{course.code} does not have a reviewed target course yet. "
+                    "AI analysis can provide a preliminary suggestion, "
+                    "but university review is required."
+                ),
+            )
 
         existing = self.mapping_repository.find_by_source_course(course.id)
         if existing:
@@ -53,6 +76,208 @@ class MappingService:
         if session_id not in self.sessions:
             self.sessions[session_id] = ConversationState()
         return self.sessions[session_id]
+
+    def ask_hermes(self, text: str) -> VoiceCommandResult:
+        courses = self.list_courses()
+        mappings = self.list_mappings()
+
+        stop_words = {
+            "the",
+            "and",
+            "for",
+            "with",
+            "this",
+            "that",
+            "course",
+            "courses",
+            "what",
+            "why",
+            "how",
+            "does",
+            "can",
+            "could",
+            "would",
+            "map",
+            "mapping",
+            "credit",
+            "explain",
+        }
+
+        query_words = {
+            word
+            for word in re.findall(r"[a-zA-Z0-9]+", text.lower())
+            if len(word) >= 3 and word not in stop_words
+        }
+
+        def relevance(course: Course) -> int:
+            code = course.code.lower()
+            name = course.name.lower()
+
+            searchable_text = " ".join(
+                [
+                    course.code,
+                    course.name,
+                    course.description,
+                    course.learning_outcomes,
+                ]
+            ).lower()
+
+            score = 0
+
+            for word in query_words:
+                if word in code:
+                    score += 5
+                elif word in name:
+                    score += 3
+                elif word in searchable_text:
+                    score += 1
+
+            return score
+
+        ranked_courses = sorted(
+            (
+                (relevance(course), course)
+                for course in courses
+            ),
+            key=lambda item: item[0],
+            reverse=True,
+        )
+
+        relevant_courses = [
+            course
+            for score, course in ranked_courses
+            if score > 0
+        ][:3]
+
+        catalogue = "\n".join(
+            (
+                f"- {course.code}: {course.name}; "
+                f"candidate target: "
+                f"{course.suggested_target_code}, "
+                f"{course.suggested_target_name}"
+            )
+            for course in courses
+        )
+
+        if relevant_courses:
+            relevant_context = "\n\n".join(
+                (
+                    f"Source course code: {course.code}\n"
+                    f"Source course title: {course.name}\n"
+                    f"Units: {course.units}\n"
+                    f"Description: {course.description}\n"
+                    f"Learning outcomes: {course.learning_outcomes}\n"
+                    f"Candidate target: "
+                    f"{course.suggested_target_code}, "
+                    f"{course.suggested_target_name}"
+                )
+                for course in relevant_courses
+            )
+        else:
+            relevant_context = (
+                "No specific course record was identified from the question."
+            )
+
+        if mappings:
+            mapping_context = "\n".join(
+                (
+                    f"- {mapping.source_course_code} is mapped to "
+                    f"{mapping.target_course_code}"
+                )
+                for mapping in mappings
+            )
+        else:
+            mapping_context = "No mappings have been confirmed yet."
+
+        system_prompt = f"""
+You are a course credit mapping assistant for a university prototype.
+
+Available external course catalogue:
+{catalogue}
+
+Most relevant records retrieved from the uploaded spreadsheet:
+{relevant_context}
+
+Current confirmed prototype mappings:
+{mapping_context}
+
+Rules:
+1. Use the retrieved spreadsheet information for course-specific answers.
+2. Do not invent course codes, learning outcomes, or official decisions.
+3. PENDING means that no target course has been reviewed.
+4. For PENDING courses, you may analyse the course but must not claim
+   that an official equivalence has been approved.
+5. All suggested mappings require university review and approval.
+6. If the necessary target-course information is unavailable, say so.
+7. Keep the response concise and suitable for voice playback.
+""".strip()
+
+        payload = {
+            "model": self.ollama_model,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": system_prompt,
+                },
+                {
+                    "role": "user",
+                    "content": text,
+                },
+            ],
+            "stream": False,
+            "options": {
+                "temperature": 0.2,
+            },
+        }
+
+        request = UrlRequest(
+            self.ollama_url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+
+        try:
+            with urlopen(request, timeout=120) as response:
+                result = json.loads(
+                    response.read().decode("utf-8")
+                )
+
+            answer = (
+                result.get("message", {})
+                .get("content", "")
+                .strip()
+            )
+            if "university review" not in answer.lower():
+                answer += (
+                    " Any final credit mapping must be reviewed "
+                    "and approved by the university."
+                )
+     
+            if not answer:
+                raise ValueError("Ollama returned an empty answer")
+
+            return VoiceCommandResult(
+                action="ai_answer",
+                message=answer,
+            )
+
+        except (
+            HTTPError,
+            URLError,
+            TimeoutError,
+            ValueError,
+            json.JSONDecodeError,
+        ) as error:
+            logger.exception("Unable to call Hermes: %s", error)
+
+            return VoiceCommandResult(
+                action="model_error",
+                message=(
+                    "I could not reach the local Hermes model. "
+                    "Please check that Ollama is running and try again."
+                ),
+            )   
 
     def interpret_voice_command(self, text: str, session_id: str) -> VoiceCommandResult:
         cleaned = text.lower().strip()
@@ -109,11 +334,39 @@ class MappingService:
                 return VoiceCommandResult(action="list_mappings", message="There are no course mappings yet.")
             summary = "; ".join(f"{m.source_course_code} to {m.target_course_code}" for m in mappings)
             return VoiceCommandResult(action="list_mappings", message=f"The current mappings are: {summary}.")
+        
+        ai_question_markers = (
+            "why",
+            "explain",
+            "compare",
+            "difference",
+            "how does",
+            "what is",
+            "recommend",
+            "equivalent",
+            "similar",
+            "what are",
+            "which",
+        )
+
+        if any(marker in cleaned for marker in ai_question_markers):
+            return self.ask_hermes(text)
+
 
         course = self.course_repository.find_by_text(cleaned)
         mapping_words = ("add", "map", "mapping", "match", "credit", "recognise", "recognize", "transfer")
 
         if course and any(word in cleaned for word in mapping_words):
+            if course.suggested_target_code == "PENDING":
+                return VoiceCommandResult(
+                    action="needs_review",
+                    message=(
+                        f"I found {course.code}, {course.name}, but it does not "
+                        "have a reviewed target course yet. I can analyse its "
+                        "description and learning outcomes, but the final mapping "
+                        "requires university review and approval."
+                    ),
+                )
             existing = self.mapping_repository.find_by_source_course(course.id)
             if existing:
                 return VoiceCommandResult(
@@ -144,7 +397,4 @@ class MappingService:
                 ),
             )
 
-        return VoiceCommandResult(
-            action="unknown",
-            message="I am not sure what you mean yet. Try saying: Map MATH101, Show mappings, List courses, or Help.",
-        )
+        return self.ask_hermes(text)
