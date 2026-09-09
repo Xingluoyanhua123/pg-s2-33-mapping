@@ -1,6 +1,8 @@
-# Voice Credit Mapping Prototype - Voice Interaction v2
+# pg-s2-33-mapping
 
-This is the original React + FastAPI credit-mapping prototype upgraded with two-way voice interaction.
+## Voice Credit Mapping Prototype
+
+A React + FastAPI credit-mapping prototype with two-way voice interaction.
 
 ## Features
 
@@ -17,17 +19,20 @@ This is the original React + FastAPI credit-mapping prototype upgraded with two-
 - Conversation history
 - Browser `localStorage` session ID
 - Text input fallback
-- Future integration point for Hermes / a local LLM
+- Mute and volume controls
 
-## Example conversation
+## Example Conversation
+
+The following examples describe the original prototype workflow.
+Available commands and responses depend on the current backend configuration and course data.
 
 1. Click **Start Conversation**.
 2. Say: `Map Database Systems`.
-3. The assistant says it found DB201 and asks whether to add the suggested mapping.
+3. The assistant identifies a course and asks for confirmation.
 4. Say: `Yes`.
 5. The mapping is created and the assistant reads the result aloud.
 
-You can also say:
+Other example commands:
 
 - `Map MATH101`
 - `Map Programming Fundamentals`
@@ -37,15 +42,21 @@ You can also say:
 - `Yes`
 - `No`
 
-## Run backend in VS Code
+Prototype results are not official university credit decisions.
 
-Open a terminal in the project directory:
+## Run the Backend
+
+Open a PowerShell terminal in the project root:
 
 ```powershell
 cd backend
 ```
 
-Use your existing Python 3.11 virtual environment, or create one if needed.
+If `.venv` does not already exist, create a Python 3.11 virtual environment:
+
+```powershell
+py -3.11 -m venv .venv
+```
 
 Install dependencies:
 
@@ -59,21 +70,19 @@ Start FastAPI:
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000
 ```
 
-Backend:
+Backend address:
 
-```text
 http://127.0.0.1:8000
-```
 
 Swagger API documentation:
 
-```text
 http://127.0.0.1:8000/docs
-```
 
-## Run frontend
+If the backend uses a local model or external data files, configure those dependencies before testing the relevant features.
 
-Open a second terminal:
+## Run the Frontend
+
+Open a second PowerShell terminal in the project root:
 
 ```powershell
 cd frontend
@@ -81,78 +90,57 @@ npm.cmd install
 npm.cmd run dev
 ```
 
-Open:
+Default frontend address:
 
-```text
 http://localhost:5173
-```
 
-Use Microsoft Edge or Google Chrome and allow microphone access.
+If this port is occupied, use the address shown in the terminal.
+
+Use Microsoft Edge or Google Chrome and allow microphone access for voice interaction.
 
 ## Architecture
 
-```text
-Microphone
-   ↓
-Browser Speech-to-Text
-   ↓
-React Frontend
-   ↓
-POST /api/voice-command
-   ↓
-FastAPI Controller
-   ↓
-MappingService + Conversation State
-   ↓
-Repository
-   ↓
-Mapping Result
-   ↓
-React Frontend
-   ↓
-Browser Text-to-Speech
-   ↓
-Speaker
-```
+The browser handles voice input and playback. The React frontend sends requests to the FastAPI backend, where the controller, service, and repository layers handle application logic and data access.
 
-## Where to add Hermes / Local LLM later
+- **Frontend:** user interface, voice input, conversation history, and speech playback.
+- **Controller:** receives API requests and returns responses.
+- **Service:** processes commands and manages conversation state.
+- **Repository:** provides access to course and mapping data.
 
-The current intent recognition is in:
+For the current API endpoints and request formats, see the running backend's Swagger documentation.
 
-```text
-backend/app/service.py
-```
+## Model Integration
 
-Specifically:
+Model integration details depend on the backend version and configuration.
 
-```python
-interpret_voice_command()
-```
-
-At the moment this method uses simple rules. Later it can call Hermes / a local LLM and receive structured output such as:
-
-```json
-{
-  "action": "create_mapping",
-  "course_code": "DB201",
-  "requires_confirmation": true
-}
-```
-
-The rest of the API / Service / Repository architecture can remain largely unchanged.
+When running a version connected to Hermes or another local LLM, ensure the required model service is running and accessible to the backend.
 
 ## Deployment
 
-`frontend/src/api.js` supports:
+The frontend API configuration supports this environment variable:
 
 ```text
 VITE_API_BASE_URL
 ```
 
-For local development it automatically falls back to:
+The local backend address is:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-For a deployed frontend, set `VITE_API_BASE_URL` to the public FastAPI backend URL.
+For a deployed frontend, set `VITE_API_BASE_URL` to the public FastAPI backend URL and configure the backend to allow requests from the frontend's origin.
+
+Do not store passwords or secret API keys in `VITE_` variables, because they are exposed to the browser.
+
+## Security
+
+Do not commit:
+
+- `.env` files containing secrets
+- API keys or passwords
+- Python virtual environments such as `.venv`
+- `node_modules`
+- Private student records or other sensitive data
+
+Use `.gitignore` to exclude local environment files and generated dependencies.
