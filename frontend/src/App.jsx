@@ -27,6 +27,18 @@ export default function App() {
   const [listening, setListening] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const [conversationMode, setConversationMode] = useState(false);
+  const [isMuted, setIsMuted] = useState(() => {
+  return localStorage.getItem("voiceMuted") === "true";
+});
+
+const [voiceVolume, setVoiceVolume] = useState(() => {
+  const saved = localStorage.getItem("voiceVolume");
+  const parsed = saved === null ? 1 : Number(saved);
+
+  return Number.isFinite(parsed) && parsed >= 0 && parsed <= 1
+    ? parsed
+    : 1;
+});
   const [history, setHistory] = useState([
     { role: "assistant", text: "Hello. I am ready to help with course credit mapping." }
   ]);
@@ -34,6 +46,11 @@ export default function App() {
   const recognitionRef = useRef(null);
   const conversationRef = useRef(false);
   const sessionId = useMemo(() => getSessionId(), []);
+
+  useEffect(() => {
+  localStorage.setItem("voiceMuted", String(isMuted));
+  localStorage.setItem("voiceVolume", String(voiceVolume));
+}, [isMuted, voiceVolume]);
 
   async function refresh() {
     try {
@@ -58,35 +75,44 @@ export default function App() {
     setHistory((items) => [...items, { role, text }]);
   }
 
-  function speak(text, continueListening = false) {
-    if (!("speechSynthesis" in window)) {
-      if (continueListening && conversationRef.current) {
-        setTimeout(startListening, 400);
-      }
-      return;
+function speak(text, continueListening = false) {
+  if (!("speechSynthesis" in window) || isMuted) {
+    setSpeaking(false);
+
+    if (continueListening && conversationRef.current) {
+      setTimeout(startListening, 400);
     }
 
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-AU";
-    utterance.rate = 0.98;
-
-    utterance.onstart = () => setSpeaking(true);
-    utterance.onend = () => {
-      setSpeaking(false);
-      if (continueListening && conversationRef.current) {
-        setTimeout(startListening, 500);
-      }
-    };
-    utterance.onerror = () => {
-      setSpeaking(false);
-      if (continueListening && conversationRef.current) {
-        setTimeout(startListening, 500);
-      }
-    };
-
-    window.speechSynthesis.speak(utterance);
+    return;
   }
+
+  window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "en-AU";
+  utterance.rate = 0.98;
+  utterance.volume = voiceVolume;
+
+  utterance.onstart = () => setSpeaking(true);
+
+  utterance.onend = () => {
+    setSpeaking(false);
+
+    if (continueListening && conversationRef.current) {
+      setTimeout(startListening, 500);
+    }
+  };
+
+  utterance.onerror = () => {
+    setSpeaking(false);
+
+    if (continueListening && conversationRef.current) {
+      setTimeout(startListening, 500);
+    }
+  };
+
+  window.speechSynthesis.speak(utterance);
+}
 
   async function runCommand(text = command, fromVoice = false) {
     const clean = text.trim();
@@ -155,6 +181,19 @@ export default function App() {
     recognition.start();
   }
 
+  function toggleMute() {
+    setIsMuted((current) => {
+      const next = !current;
+
+      if (next) {
+        window.speechSynthesis?.cancel();
+        setSpeaking(false);
+      }
+
+      return next;
+    });
+  }
+
   function startConversation() {
     conversationRef.current = true;
     setConversationMode(true);
@@ -217,6 +256,34 @@ export default function App() {
               <button className="stop-button" onClick={stopConversation}>■ Stop Conversation</button>
             )}
             <button className="secondary-button" onClick={startListening} disabled={listening || speaking}>Speak Once</button>
+          </div>
+          <div className="sound-controls">
+            <button
+              type="button"
+              className="secondary-button"
+              onClick={toggleMute}
+              aria-pressed={isMuted}
+            >
+              {isMuted ? "Unmute" : "Mute"}
+            </button>
+
+            <label className="volume-control">
+              <span>Volume</span>
+
+              <input
+                type="range"
+                min="0"
+                max="100"
+                step="5"
+                value={Math.round(voiceVolume * 100)}
+                disabled={isMuted}
+                onChange={(event) => {
+                  setVoiceVolume(Number(event.target.value) / 100);
+                }}
+              />
+
+              <span>{isMuted ? 0 : Math.round(voiceVolume * 100)}%</span>
+            </label>
           </div>
 
           <div className="command-row">

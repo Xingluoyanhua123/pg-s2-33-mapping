@@ -312,3 +312,45 @@ td div {
 .chat-message p { margin: 5px 0 0; color: inherit; }
 .user-message { margin-left: auto; background: #202a44; color: white; }
 .assistant-message { margin-right: auto; background: #f0f3f8; color: #26324b; }
+
+.sound-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 260px;
+}
+
+.volume-control input[type="range"] {
+  flex: 1;
+  cursor: pointer;
+}
+
+.volume-control input[type="range"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.volume-control span:last-child {
+  min-width: 44px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .sound-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .volume-control {
+    width: 100%;
+    min-width: 0;
+  }
+}
