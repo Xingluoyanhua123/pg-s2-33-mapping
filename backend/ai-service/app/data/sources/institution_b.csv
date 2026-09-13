@@ -1,0 +1,4 @@
+student_id,prior_course_title,prior_course_description,prior_institution,expected_mapping
+S2000001,Machine Learning Fundamentals,"Supervised and unsupervised learning, neural networks, and model evaluation techniques.",Monash University,COMP_SCI 3306
+S2000002,Computer Networking Basics,"TCP/IP, routing protocols, and network security fundamentals.",Monash University,COMP_SCI 2202
+S2000003,Agile Software Development,"Team-based software development lifecycle including requirements, design, and testing.",Monash University,COMP_SCI 4407

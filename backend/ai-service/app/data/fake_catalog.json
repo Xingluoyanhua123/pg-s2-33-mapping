@@ -1,0 +1,37 @@
+[
+  {
+    "course_code": "COMP_SCI 1013",
+    "course_title": "Introduction to Programming",
+    "description": "Fundamentals of programming using Python: variables, control flow, functions, basic data structures, and problem solving."
+  },
+  {
+    "course_code": "COMP_SCI 2100",
+    "course_title": "Data Structures and Algorithms",
+    "description": "Core data structures (lists, trees, graphs, hash tables) and algorithm design, complexity analysis, and efficiency."
+  },
+  {
+    "course_code": "COMP_SCI 3200",
+    "course_title": "Database Systems",
+    "description": "Relational database design, SQL, normalization, transactions, and an introduction to NoSQL data models."
+  },
+  {
+    "course_code": "COMP_SCI 3306",
+    "course_title": "Machine Learning",
+    "description": "Supervised and unsupervised learning, model evaluation, neural networks, and practical machine learning workflows."
+  },
+  {
+    "course_code": "COMP_SCI 2202",
+    "course_title": "Computer Networks",
+    "description": "Network architecture, TCP/IP, routing, network security fundamentals, and distributed systems basics."
+  },
+  {
+    "course_code": "COMP_SCI 4407",
+    "course_title": "Software Engineering Project",
+    "description": "Team-based software development lifecycle: requirements, design, agile methodology, testing, and deployment."
+  },
+  {
+    "course_code": "COMP_SCI 2209",
+    "course_title": "Web Application Development",
+    "description": "Full-stack web development including frontend frameworks, backend APIs, and database integration."
+  }
+]

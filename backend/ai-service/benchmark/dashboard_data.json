@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-08-19 08:20:10",
+  "status": "Mixed: Qwen2.5 numbers are REAL (measured). Gemma/GPT-OSS/Phi-3 are SIMULATED, pending a real run.",
+  "eval_set_size": 9,
+  "eval_sources": [
+    "institution_a.json (JSON)",
+    "institution_b.csv (CSV)",
+    "institution_c.xml (XML)"
+  ],
+  "results": [
+    {
+      "model_id": "qwen2.5-0.5b",
+      "display_name": "Qwen2.5 0.5B Instruct",
+      "hf_repo": "Qwen/Qwen2.5-0.5B-Instruct",
+      "source_note": "Actually run in this environment with real Hugging Face weights",
+      "params_billion": 0.5,
+      "precision_at_1": 1.0,
+      "recall_at_1": 1.0,
+      "avg_latency_ms": 17436.4,
+      "estimated_ram_gb": 2.77,
+      "data_source": "measured"
+    },
+    {
+      "model_id": "gemma-2-2b",
+      "display_name": "Gemma 2 2B Instruct",
+      "hf_repo": "google/gemma-2-2b-it",
+      "source_note": "Ivan demonstrated Gemma during the client meeting",
+      "params_billion": 2.0,
+      "precision_at_1": 0.78,
+      "recall_at_1": 0.78,
+      "avg_latency_ms": 420,
+      "estimated_ram_gb": 4.5,
+      "data_source": "simulated"
+    },
+    {
+      "model_id": "gpt-oss-20b",
+      "display_name": "GPT-OSS 20B",
+      "hf_repo": "openai/gpt-oss-20b",
+      "source_note": "Ivan demonstrated GPT-OSS (OpenAI's open-weight model)",
+      "params_billion": 20.0,
+      "precision_at_1": 0.89,
+      "recall_at_1": 0.89,
+      "avg_latency_ms": 2100,
+      "estimated_ram_gb": 40.0,
+      "data_source": "simulated"
+    },
+    {
+      "model_id": "phi-3-mini",
+      "display_name": "Phi-3 Mini 3.8B Instruct",
+      "hf_repo": "microsoft/Phi-3-mini-4k-instruct",
+      "source_note": "Additional comparison candidate",
+      "params_billion": 3.8,
+      "precision_at_1": 0.82,
+      "recall_at_1": 0.82,
+      "avg_latency_ms": 650,
+      "estimated_ram_gb": 7.5,
+      "data_source": "simulated"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Benchmark Dashboard — Credit Mapping AI</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+  body { background: #f5f7fa; font-family: system-ui, -apple-system, sans-serif; }
+  .navbar-brand { font-weight: 700; }
+  .metric-card { border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-radius: 10px; }
+  .metric-card .card-header { background: #fff; border-bottom: 1px solid #edf0f3; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em; color: #6b7280; }
+  .model-row-label { font-weight: 600; font-size: 0.9rem; }
+  .progress { height: 22px; border-radius: 6px; }
+  .progress-bar { font-size: 0.8rem; font-weight: 600; }
+  .source-badge { font-size: 0.8rem; margin-right: 6px; }
+  .data-badge { font-size: 0.65rem; padding: 2px 7px; vertical-align: middle; margin-left: 6px; }
+  table.table-metrics th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; color: #6b7280; border-top: none; }
+  table.table-metrics td { vertical-align: middle; font-size: 0.9rem; }
+  code.repo-name { font-size: 0.8rem; background: #eef1f5; padding: 2px 6px; border-radius: 4px; }
+  footer.note { font-size: 0.85rem; color: #6b7280; }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark mb-4">
+  <div class="container">
+    <span class="navbar-brand"><i class="fa-solid fa-gauge-high me-2"></i>Credit Mapping — Model Benchmark Dashboard</span>
+    <span class="navbar-text text-light-emphasis small">PG-S2-33 · Agentic AI Credit Mapping System</span>
+  </div>
+</nav>
+<div class="container pb-5">
+  <div class="alert alert-warning d-flex align-items-center" role="alert" id="statusBanner">
+    <i class="fa-solid fa-triangle-exclamation me-2"></i>
+    <div id="statusText"></div>
+  </div>
+  <div class="row g-2 mb-4">
+    <div class="col-auto"><span class="badge bg-secondary">Eval set size: <span id="evalSize"></span> records</span></div>
+    <div class="col-auto"><span class="badge bg-secondary">Generated: <span id="generatedAt"></span></span></div>
+    <div class="col-auto"><span class="badge bg-success">Measured = real, run in this environment</span></div>
+    <div class="col-auto"><span class="badge bg-secondary">Simulated = illustrative, not yet run</span></div>
+  </div>
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="card metric-card h-100">
+        <div class="card-header"><i class="fa-solid fa-bullseye me-1"></i> Precision @ 1</div>
+        <div class="card-body" id="precisionChart"></div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card metric-card h-100">
+        <div class="card-header"><i class="fa-solid fa-stopwatch me-1"></i> Average Latency (ms)</div>
+        <div class="card-body" id="latencyChart"></div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card metric-card h-100">
+        <div class="card-header"><i class="fa-solid fa-memory me-1"></i> Estimated Memory Footprint (GB RAM)</div>
+        <div class="card-body" id="memoryChart"></div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card metric-card h-100">
+        <div class="card-header"><i class="fa-solid fa-database me-1"></i> Evaluation Data Sources (multi-format)</div>
+        <div class="card-body">
+          <span class="badge bg-primary source-badge">JSON</span> institution_a.json — 3 records<br><br>
+          <span class="badge bg-success source-badge">CSV</span> institution_b.csv — 3 records<br><br>
+          <span class="badge bg-info text-dark source-badge">XML</span> institution_c.xml — 3 records (scraped-transcript style)
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card metric-card mt-4">
+    <div class="card-header"><i class="fa-solid fa-table me-1"></i> Model Parameters &amp; Source</div>
+    <div class="card-body p-0">
+      <table class="table table-metrics table-hover mb-0">
+        <thead>
+          <tr><th class="ps-3">Model</th><th>HF Repo</th><th>Params</th><th>Data</th><th class="pe-3">Why included</th></tr>
+        </thead>
+        <tbody id="paramsTable"></tbody>
+      </table>
+    </div>
+  </div>
+  <footer class="note mt-4" id="footerNote"></footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+const data = __DASHBOARD_DATA__;
+document.getElementById('statusText').textContent = data.status;
+document.getElementById('evalSize').textContent = data.eval_set_size;
+document.getElementById('generatedAt').textContent = data.generated_at;
+const barColors = ['bg-primary', 'bg-warning', 'bg-info', 'bg-danger'];
+function dataBadge(source) {
+  return source === 'measured'
+    ? '<span class="badge bg-success data-badge">MEASURED</span>'
+    : '<span class="badge bg-secondary data-badge">SIMULATED</span>';
+}
+function renderMetricRows(containerId, items, valueKey, maxValue, formatter) {
+  const container = document.getElementById(containerId);
+  items.forEach((item, i) => {
+    const pct = Math.max(4, Math.round((item[valueKey] / maxValue) * 100));
+    const row = document.createElement('div');
+    row.className = 'mb-3';
+    row.innerHTML = '<div class="d-flex justify-content-between model-row-label mb-1"><span>' + item.display_name + ' ' + dataBadge(item.data_source) + '</span><span class="text-muted">' + formatter(item[valueKey]) + '</span></div><div class="progress"><div class="progress-bar ' + barColors[i % barColors.length] + '" role="progressbar" style="width:' + pct + '%"></div></div>';
+    container.appendChild(row);
+  });
+}
+const results = data.results;
+renderMetricRows('precisionChart', results, 'precision_at_1', 1.0, function(v) { return (v * 100).toFixed(0) + '%'; });
+renderMetricRows('latencyChart', results, 'avg_latency_ms', Math.max.apply(null, results.map(function(r) { return r.avg_latency_ms; })), function(v) { return v.toFixed(1) + ' ms'; });
+renderMetricRows('memoryChart', results, 'estimated_ram_gb', Math.max.apply(null, results.map(function(r) { return r.estimated_ram_gb; })), function(v) { return v + ' GB'; });
+const tbody = document.getElementById('paramsTable');
+results.forEach(function(r) {
+  const row = document.createElement('tr');
+  row.innerHTML = '<td class="ps-3 fw-semibold">' + r.display_name + '</td><td><code class="repo-name">' + r.hf_repo + '</code></td><td>' + r.params_billion + 'B</td><td>' + dataBadge(r.data_source) + '</td><td class="pe-3">' + r.source_note + '</td>';
+  tbody.appendChild(row);
+});
+const measuredCount = results.filter(function(r) { return r.data_source === 'measured'; }).length;
+const simulatedCount = results.filter(function(r) { return r.data_source === 'simulated'; }).length;
+document.getElementById('footerNote').innerHTML = '<strong>How this was generated:</strong> the benchmark harness (<code>benchmark/run_benchmark.py</code>) loads all three data sources, embeds each prior-course record, retrieves the closest matching Adelaide course, and checks it against the known expected mapping — computing real precision/recall, latency, and process memory deltas. <strong>' + measuredCount + ' model(s) above were actually run</strong> with real Hugging Face weights in this environment (marked MEASURED). <strong>' + simulatedCount + ' model(s)</strong> have not been downloaded/run yet (marked SIMULATED) — their numbers are illustrative estimates based on typical characteristics of that model size. Rerun <code>run_benchmark.py</code> with <code>mode: "huggingface"</code> in <code>benchmark/model_registry.py</code> for each remaining model to replace simulated numbers with real ones.';
+</script>
+</body>
+</html>

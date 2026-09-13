@@ -1,0 +1,710 @@
+{
+  "llm_provider": "huggingface",
+  "embedding_provider": "huggingface",
+  "accuracy_percent": 100.0,
+  "correct": 100,
+  "total": 100,
+  "avg_time_per_student_sec": 15.813200416564941,
+  "details": [
+    {
+      "student_id": "S1000000",
+      "expected": "HOSP3005",
+      "predicted": "HOSP3005",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000001",
+      "expected": "BUSI6026",
+      "predicted": "BUSI6026",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000002",
+      "expected": "EDUC2012",
+      "predicted": "EDUC2012",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000003",
+      "expected": "MDIA1009",
+      "predicted": "MDIA1009",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000004",
+      "expected": "PODI4003",
+      "predicted": "PODI4003",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000005",
+      "expected": "HRES2012",
+      "predicted": "HRES2012",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000006",
+      "expected": "IBUS3010",
+      "predicted": "IBUS3010",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000007",
+      "expected": "ACCT1001",
+      "predicted": "ACCT1001",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000008",
+      "expected": "MDIA2016",
+      "predicted": "MDIA2016",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000009",
+      "expected": "ARCH1002",
+      "predicted": "ARCH1002",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000010",
+      "expected": "HBIO3008",
+      "predicted": "HBIO3008",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000011",
+      "expected": "EDUC5138",
+      "predicted": "EDUC5138",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000012",
+      "expected": "ENGC2001",
+      "predicted": "ENGC2001",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000013",
+      "expected": "COGR2004",
+      "predicted": "COGR2004",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000014",
+      "expected": "CHEM3013",
+      "predicted": "CHEM3013",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000015",
+      "expected": "LITR3002",
+      "predicted": "LITR3002",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000016",
+      "expected": "LAWS1005",
+      "predicted": "LAWS1005",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000017",
+      "expected": "COMP3903",
+      "predicted": "COMP3903",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000018",
+      "expected": "COMP3003",
+      "predicted": "COMP3003",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000019",
+      "expected": "BUSI1018",
+      "predicted": "BUSI1018",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000020",
+      "expected": "SOCI1005",
+      "predicted": "SOCI1005",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000021",
+      "expected": "PHYS4001",
+      "predicted": "PHYS4001",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000022",
+      "expected": "MDIA1014",
+      "predicted": "MDIA1014",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000023",
+      "expected": "ENGP6026",
+      "predicted": "ENGP6026",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000024",
+      "expected": "BIOL6012",
+      "predicted": "BIOL6012",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000025",
+      "expected": "ENGMX402",
+      "predicted": "ENGMX402",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000026",
+      "expected": "ACCT6000",
+      "predicted": "ACCT6000",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000027",
+      "expected": "COREX004",
+      "predicted": "COREX004",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000028",
+      "expected": "DENT1000",
+      "predicted": "DENT1000",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000029",
+      "expected": "MDIA5003",
+      "predicted": "MDIA5003",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000030",
+      "expected": "ECON1002",
+      "predicted": "ECON1002",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000031",
+      "expected": "DENT3101",
+      "predicted": "DENT3101",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000032",
+      "expected": "DENT6004",
+      "predicted": "DENT6004",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000033",
+      "expected": "INDG5009",
+      "predicted": "INDG5009",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000034",
+      "expected": "EDUCX303",
+      "predicted": "EDUCX303",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000035",
+      "expected": "BIOL5001",
+      "predicted": "BIOL5001",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000036",
+      "expected": "SPOR2003",
+      "predicted": "SPOR2003",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000037",
+      "expected": "LANG3207",
+      "predicted": "LANG3207",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000038",
+      "expected": "MATHX209",
+      "predicted": "MATHX209",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000039",
+      "expected": "INDG2003",
+      "predicted": "INDG2003",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000040",
+      "expected": "DENT2004",
+      "predicted": "DENT2004",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000041",
+      "expected": "PUBH2002",
+      "predicted": "PUBH2002",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000042",
+      "expected": "MARK3012",
+      "predicted": "MARK3012",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000043",
+      "expected": "HOSP5001",
+      "predicted": "HOSP5001",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000044",
+      "expected": "EDUC5131",
+      "predicted": "EDUC5131",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000045",
+      "expected": "RESE5000",
+      "predicted": "RESE5000",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000046",
+      "expected": "MDIA2020",
+      "predicted": "MDIA2020",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000047",
+      "expected": "CRIM2005",
+      "predicted": "CRIM2005",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000048",
+      "expected": "PUBH3010",
+      "predicted": "PUBH3010",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000049",
+      "expected": "ENGEX407",
+      "predicted": "ENGEX407",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000050",
+      "expected": "MARK1001",
+      "predicted": "MARK1001",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000051",
+      "expected": "FOOD6003",
+      "predicted": "FOOD6003",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000052",
+      "expected": "STATX402",
+      "predicted": "STATX402",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000053",
+      "expected": "LANG3206",
+      "predicted": "LANG3206",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000054",
+      "expected": "OCCU5000",
+      "predicted": "OCCU5000",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000055",
+      "expected": "MUSI3005",
+      "predicted": "MUSI3005",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000056",
+      "expected": "PSYC1002",
+      "predicted": "PSYC1002",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000057",
+      "expected": "MUSI3027",
+      "predicted": "MUSI3027",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000058",
+      "expected": "ECON2002",
+      "predicted": "ECON2002",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000059",
+      "expected": "BAFI5005",
+      "predicted": "BAFI5005",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000060",
+      "expected": "MUSI1014",
+      "predicted": "MUSI1014",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000061",
+      "expected": "CREA3009",
+      "predicted": "CREA3009",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000062",
+      "expected": "BIOL2027",
+      "predicted": "BIOL2027",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000063",
+      "expected": "PSYC2022",
+      "predicted": "PSYC2022",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000064",
+      "expected": "MATHX106",
+      "predicted": "MATHX106",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000065",
+      "expected": "MEDI5004",
+      "predicted": "MEDI5004",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000066",
+      "expected": "SOCI2101",
+      "predicted": "SOCI2101",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000067",
+      "expected": "STAT4019",
+      "predicted": "STAT4019",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000068",
+      "expected": "MDIA1015",
+      "predicted": "MDIA1015",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000069",
+      "expected": "COMP5003",
+      "predicted": "COMP5003",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000070",
+      "expected": "BUSI6030",
+      "predicted": "BUSI6030",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000071",
+      "expected": "BLDG2008",
+      "predicted": "BLDG2008",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000072",
+      "expected": "BLDG4012",
+      "predicted": "BLDG4012",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000073",
+      "expected": "LAWS1115",
+      "predicted": "LAWS1115",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000074",
+      "expected": "ANIM3003",
+      "predicted": "ANIM3003",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000075",
+      "expected": "LANG1205",
+      "predicted": "LANG1205",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000076",
+      "expected": "HLTH1002",
+      "predicted": "HLTH1002",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000077",
+      "expected": "PHAR1004",
+      "predicted": "PHAR1004",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000078",
+      "expected": "INFO3014",
+      "predicted": "INFO3014",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000079",
+      "expected": "REHB4010",
+      "predicted": "REHB4010",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000080",
+      "expected": "PUBH2022",
+      "predicted": "PUBH2022",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000081",
+      "expected": "BIOL5022",
+      "predicted": "BIOL5022",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000082",
+      "expected": "GRAP2015",
+      "predicted": "GRAP2015",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000083",
+      "expected": "HLTH5000",
+      "predicted": "HLTH5000",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000084",
+      "expected": "PSYC6916",
+      "predicted": "PSYC6916",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000085",
+      "expected": "MUSI6002",
+      "predicted": "MUSI6002",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000086",
+      "expected": "OCCU6003",
+      "predicted": "OCCU6003",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000087",
+      "expected": "CRIM3008",
+      "predicted": "CRIM3008",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000088",
+      "expected": "EDUCX414",
+      "predicted": "EDUCX414",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000089",
+      "expected": "SCIEX300",
+      "predicted": "SCIEX300",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000090",
+      "expected": "ANIM2005",
+      "predicted": "ANIM2005",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000091",
+      "expected": "ECON6004",
+      "predicted": "ECON6004",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000092",
+      "expected": "ENGEX409",
+      "predicted": "ENGEX409",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000093",
+      "expected": "EDUC1021",
+      "predicted": "EDUC1021",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000094",
+      "expected": "BUSI1004",
+      "predicted": "BUSI1004",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000095",
+      "expected": "BUSI5031",
+      "predicted": "BUSI5031",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000096",
+      "expected": "BIOL6011",
+      "predicted": "BIOL6011",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000097",
+      "expected": "GRAP2004",
+      "predicted": "GRAP2004",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000098",
+      "expected": "EDUC3008",
+      "predicted": "EDUC3008",
+      "correct": true,
+      "similarity_score": 1.0
+    },
+    {
+      "student_id": "S1000099",
+      "expected": "INFO2004",
+      "predicted": "INFO2004",
+      "correct": true,
+      "similarity_score": 1.0
+    }
+  ]
+}

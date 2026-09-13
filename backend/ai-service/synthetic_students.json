@@ -1,0 +1,702 @@
+[
+  {
+    "student_id": "S1000000",
+    "prior_course_title": "Tourism, Events and Hospitality Industry Research Project",
+    "prior_course_description": "This course equips students with skills to work in the tourism, events and hospitality industry. It draws on the innovation, technology, business and sustainability in industry enabling students to critically reflect on these areas. Designed to enhance technical skills and promote critical thinking and analysis, the course provides students with an understanding of the importance of stakeholder engagement in understanding the business needs of, and developing relevant strategies for, an organisation.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "HOSP3005"
+  },
+  {
+    "student_id": "S1000001",
+    "prior_course_title": "Business Analytics Project 2",
+    "prior_course_description": "This course aims to enhance students' expertise in advanced business analytics techniques, equipping them with the skills needed to design and execute comprehensive projects in real-world business contexts. Students will learn to apply statistical analysis, machine learning, and data visualisation to solve complex business problems while focusing on effectively communicating and presenting analytical insights. The course prepares students to manage and deliver business analytics projects that drive strategic decision-making and innovation across various industries.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BUSI6026"
+  },
+  {
+    "student_id": "S1000002",
+    "prior_course_title": "Science Education",
+    "prior_course_description": "To introduce students to key constructs associated with how children learn science as the basis for planning and assessing disciplinary-based learning experiences across the primary years of schooling. Students will develop an understanding of inquiry-based and social constructivist perspectives of learning. Students will investigate current pedagogies, thinking and working scientifically and make links with other curriculum areas. Students will confidently and capably plan, implement and evaluate a unit of work in science that supports the building of inquiry skills, builds understanding of science concepts (embedded in biology, chemistry, earth and space and/or physical sciences) and makes connections to real-world context.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "EDUC2012"
+  },
+  {
+    "student_id": "S1000003",
+    "prior_course_title": "Introduction to Film and Television",
+    "prior_course_description": "This course will introduce students to core film and television history, theoretical concepts, production roles and practical skills that will allow them to develop their capacities as filmmakers. They will explore the key industry roles needed to create a professional quality film, including directing, cinematography, editing, sound recording, producing, and production design. Through this course, students will apply their skills and knowledge as they work in teams to produce short fiction films.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MDIA1009"
+  },
+  {
+    "student_id": "S1000004",
+    "prior_course_title": "Applied Podiatry Studies 400",
+    "prior_course_description": "The aim of this course is to develop students' knowledge of the diagnosis and management of vascular diseases, the principles of chronic wound management, management of the diabetic foot and in the advanced surgical management techniques of foot pathologies. Course contents include Pathology: arterial, venous, oedema, gangrene and other occlusive condition: investigations, clinical manifestation and treatment. Assessment and management of the patient with diabetes: neuropathy, macro and micro angiopathy, infection, ulceration and gangrene. Management of other high risk patients: painful neuropathy, Hansens disease, alcohol related complications, HIV related neuropathies. Wound care: wound care products, indications and contra-indications. Total contact casting, use of splints, walkers and footwear. International management protocols. Toe, forefoot and rearfoot surgery.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "PODI4003"
+  },
+  {
+    "student_id": "S1000005",
+    "prior_course_title": "UO Foundations of Human Resource Management",
+    "prior_course_description": "The aim of this course is to provide students with an appreciation of current theoretical, sociological and practitioner-based issue and developments in the technical aspects of human resource management. The effects of sociological, legal, economic, ethical, political, strategic and environmental changes, issues and developments on human resource management processes, practices, programs and policies.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "HRES2012"
+  },
+  {
+    "student_id": "S1000006",
+    "prior_course_title": "OL Corporate Responsibility for Global Business",
+    "prior_course_description": "The content of this course covers corporate social responsibility (CSR) and performance (CSP), the shareholder-stakeholder debate, corporate governance in global business, ethical foundations of CSR, strategic CSR, implementation of CSR as part of corporate strategy, challenges at the base of the pyramid (BoP), social entrepreneurship and social business around the world. Components of this course can include a group or individual discovery learning project, of which primary goals are (1) to train students in applying their knowledge, analytical and critical thinking skills to a practical problem in the field of CSR/corporate responsibility for global business; (2) to assist students in developing their own project in the form of a CSR strategy, social entrepreneurship or social business implementation plan; 3) to train students in developing skills in effective and efficient team and self-management in a real business environment.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "IBUS3010"
+  },
+  {
+    "student_id": "S1000007",
+    "prior_course_title": "Financial Accounting 1",
+    "prior_course_description": "The objective of the course is to provide exposure to and have students apply a variety of accounting processes influenced by the accounting standards and conceptual framework and be exposed to fundamental theoretical conceptual issues surrounding the practice of financial accounting.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ACCT1001"
+  },
+  {
+    "student_id": "S1000008",
+    "prior_course_title": "Screenwriting: Theory and Practice",
+    "prior_course_description": "This second-year course aims to familiarise students with a wide variety of approaches to writing for screen. Students will be introduced to the formal and industry-oriented expectations of a range of genres and formats, including writing for feature films, for streaming/series, and for fine art/installation. The course works to develop students technical skills in relation to this form of writing, in addition to affording opportunities to explore different genres and formats as they work towards a portfolio of short scripts.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MDIA2016"
+  },
+  {
+    "student_id": "S1000009",
+    "prior_course_title": "Design Communication (Principles)",
+    "prior_course_description": "The course introduces students to the representation of architecture and the built environment, including fundamental drawing principles, model-making techniques and architectural drafting conventions. Students explore different methods of communication and their relationship to the design process through sketching and orthographic projection, physical model-making, 3D drawing, composition and graphic layout, and basic rendering and computer-aided graphics. The course forms part of fundamental design studies within the architecture program, utilising workshop and studio formats to develop skills. This course assumes no prior experience in drawing and aligns with the program\u2019s intent to develop and demonstrate disciplinary knowledge and skills utilising a range of media and forms of communication.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ARCH1002"
+  },
+  {
+    "student_id": "S1000010",
+    "prior_course_title": "Biological Psychiatry",
+    "prior_course_description": "The aim of this course is to provide a multidisciplinary understanding of Biological Psychiatry by providing a general overview of the Biological Psychiatry field, exploring the biological basis of prevalent psychiatric disorders affecting Australia (including First Nations people) and the rest of the world, investigation of the causes and potential therapeutic interventions for psychiatric disorders. The course content will include genetics, biochemistry, molecular biology and neurobiology perspectives of psychiatric disease. This course builds upon prerequisite knowledge of the structure and function of the human nervous system, to explore how these are affected by major psychiatric disorders.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "HBIO3008"
+  },
+  {
+    "student_id": "S1000011",
+    "prior_course_title": "Advanced Qualitative Methods for Education Research",
+    "prior_course_description": "This course will provide students with advanced knowledge and skills in designing and conducting qualitative research in an educational context.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "EDUC5138"
+  },
+  {
+    "student_id": "S1000012",
+    "prior_course_title": "Introduction to Structural Design - Loads and Forms",
+    "prior_course_description": "This course introduces students to the conceptual and preliminary stages of structural design including developing an understanding of the behaviour and typical use cases of common structural forms and the quantification of load paths and design actions arising from gravity, live loads, wind and earthquake loads.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ENGC2001"
+  },
+  {
+    "student_id": "S1000013",
+    "prior_course_title": "Immersive Media Design and Development 2",
+    "prior_course_description": "This course expands on Immersive Media Design and Development 1. It does this by deepening student knowledge of the skills associated with 3D modelling, texture painting, 3D spatial sound, scripting and game engine use for immersive technologies. This course also provides students with an understanding of how immersive technology projects are managed, and how differing roles affect various stages of the development pipeline.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "COGR2004"
+  },
+  {
+    "student_id": "S1000014",
+    "prior_course_title": "Nuclear and Radiation Chemistry 3",
+    "prior_course_description": "The aim of this course is to develop awareness and understanding of the challenges surrounding the sourcing of radionuclides for a variety of applications and managing waste (both natural and manufactured).",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "CHEM3013"
+  },
+  {
+    "student_id": "S1000015",
+    "prior_course_title": "Global Modernisms and Postmodernisms",
+    "prior_course_description": "This advanced course develops students understanding of the global spread of modernism and postmodernism as literary movements in the twentieth century and beyond. By closely studying representative texts from several featured national formations (which may include English, Irish, American, Australian, South African, and others), the course will equip students with the more advanced skills necessary for sophisticated and contextualised literary analysis, appreciation and knowledge building. Fundamental theoretical, technical, and interpretive concepts will be packaged in lively classroom exercises and assessments to advance students awareness of the rich traditions of modernist and postmodernist literary expression in English.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "LITR3002"
+  },
+  {
+    "student_id": "S1000016",
+    "prior_course_title": "Health Law",
+    "prior_course_description": "Using a cross-disciplinary lens, students will engage in critical analysis of the intersection between the law and broad-based public health policy. They will examine the legal, social and ethical arguments underpinning the legal framework for the protection of patients, the duties imposed on health care practitioners, and the promotion of best practice in the health care sector. This will extend to the exploration of current debates and emerging legal and policy issues regarding the challenges faced in balancing the competing interests implicated when law is applied to health care. The course therefore places considerable emphasis on investigating how Health Law supports or impedes the delivery of social justice regarding the allocation of high-quality health services to the population and particularly vulnerable population cohorts. Students will also reinforce and enhance their problem-solving skills by applying Health Law to complex real life problem scenarios, and they will learn how to communicate their analysis to both legal and non-legal professionals.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "LAWS1005"
+  },
+  {
+    "student_id": "S1000017",
+    "prior_course_title": "ICT Capstone Project 1",
+    "prior_course_description": "The aim of this course is to develop students' ability to effectively apply their technical expertise and professional competencies to deliver a project plan and prototype for an agreed artefact to a client while working within a project team. Through this approach, students will enhance their proficiency in project management, team organisation, stakeholder management and comprehension of enterprise governance practices.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "COMP3903"
+  },
+  {
+    "student_id": "S1000018",
+    "prior_course_title": "Mobile Game Development",
+    "prior_course_description": "Utilise a recognised game development methodology and game engine to design and implement a mobile-platform game. Students will collaborate in creating engaging game mechanics using touch inputs and apply user interface (UI) and user experience (UX) principles targeting mobile devices.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "COMP3003"
+  },
+  {
+    "student_id": "S1000019",
+    "prior_course_title": "UO Business and Society",
+    "prior_course_description": "The aim of this course is to develop students' understanding of the relationship between society, business, government, and the not-for-profit sector. It also aims to enable students to identify a range of professional capabilities necessary for participation in a sustainable society.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BUSI1018"
+  },
+  {
+    "student_id": "S1000020",
+    "prior_course_title": "Approaches to Culture",
+    "prior_course_description": "Approaches to Culture introduces students to the foundations, futures, and applications of Cultural Studies as a distinctive interdisciplinary formation within the Humanities and Social Sciences. Students are invited to use the conceptual tools and methods of Cultural Studies to reflect upon their own experiences and identities, as well as to develop an historically-informed sense of contemporary culture. In doing so, students will lay the groundwork for further and more detailed engagements with the diverse theories and methods of Cultural Studies throughout the major.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "SOCI1005"
+  },
+  {
+    "student_id": "S1000021",
+    "prior_course_title": "Advanced Physics Part 2",
+    "prior_course_description": "This course covers a range of advanced topics in physics, the methods of presentation and assessment of which vary according to module. Students enrolled in this course select three of the following modules, subject to availability (and not already undertaken as part of the course PHYSICS 4010 'Advanced Physics Part 1'): Advanced Astrophysics, Advanced Atmospheric Physics, Electronics for Data Acquisition, Electrodynamics, Data Analysis and Modelling, Gauge Field Theories, General Relativity, Non-Linear Optics, Nuclear And Radiation Physics, Quantum Field Theory and Relativistic Quantum Mechanics & Particle Physics. Students must consult the Head of Discipline regarding the selection of modules as each module has specific Level III Physics pre-requisites. Students enrolled in the B. Science (Honours) in the Discipline of Physics may be given permission by the Head of Discipline to substitute equivalent modules offered within the Faculty of Sciences, Engineering & Technology.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "PHYS4001"
+  },
+  {
+    "student_id": "S1000022",
+    "prior_course_title": "Popular Media and Society",
+    "prior_course_description": "This course will introduce key sociological, theoretical and structural perspectives on popular media with an emphasis on taste cultures, identity politics, participatory and convergence cultures, representation, affective capitalism, medium specificity and transmedia. Students are encouraged to analyse the complexities of popular media and its social and cultural function.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MDIA1014"
+  },
+  {
+    "student_id": "S1000023",
+    "prior_course_title": "Engineering of Optical Materials",
+    "prior_course_description": "This course will introduce fundamental and applied principles of materials for optical engineering. This will include photonic crystal structures, principles of light-matter interactions and light modulation and control. The course will cover fundamental and applied concepts of photonics engineering and will be delivered through a combination of lectures and tutorials. The course should highlight the significance of optical materials engineering in modern society and contextualise the selection of engineering materials on the basis of their characteristics and end use applications.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ENGP6026"
+  },
+  {
+    "student_id": "S1000024",
+    "prior_course_title": "Biotechnology (Biomedical) Research Project\u00a0B",
+    "prior_course_description": "This course is designed to develop the practical skills required for a successful career in scientific research or related activities. It provides advanced education and training in the principles of scientific research and the current state of knowledge and techniques used in the field of biomedical research. Students learn to search for and critically evaluate scientific literature relevant to their chosen discipline, to plan and design scientific experiments, and to develop advanced written and verbal communication skills. Each student is expected to carry out a laboratory-based research project during the year. At the end of the year the project outcomes are to be written up as a thesis using a form similar to that required for publication of research data. Each student will be required to give a formal presentation of their research at the end of the year, followed by an oral defence of their findings and conclusions. This course must be completed in conjunction with Biotechnology (Biomedical) Research Project A. These combined courses are the culmination of the Master of Science (Biotechnology) program, integrating and applying the knowledge and skills developed in the first year, to real-world biotechnology research.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BIOL6012"
+  },
+  {
+    "student_id": "S1000025",
+    "prior_course_title": "Advanced Vibrations",
+    "prior_course_description": "This course aims to equip students with advanced knowledge and skills on vibration theory, modelling and analysis of complex mechanical systems. This course delves into system modelling via the use of energy analysis and its application to complex continuous and multi-DOF vibrating systems, and analysis of nonlinearities in vibrations. By employing this knowledge, learners will develop complex problem-solving skills to address vibrations and dynamics of Micro- Electro-Mechanical Systems (MEMS). This course aligns with the program intent to provide in-depth understanding of vibration theory and modelling, preparing students to devise robust mechanical machines/systems.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ENGMX402"
+  },
+  {
+    "student_id": "S1000026",
+    "prior_course_title": "Strategic Management Accounting",
+    "prior_course_description": "This course examines the role of strategic management accounting in supporting organisational strategy, competitive advantage, and long-term value creation. Students will develop the ability to evaluate critically and apply strategic management accounting tools and techniques to inform decision-making in diverse organisational contexts.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ACCT6000"
+  },
+  {
+    "student_id": "S1000027",
+    "prior_course_title": "Transforming Learning through First Nations Knowledges",
+    "prior_course_description": "This course provides a transformative introduction to First Nations knowledge systems and perspectives. Through deep listening, critical self-reflection, ethical engagement, and collaborative learning, students will develop the capability to navigate cultural interfaces respectfully and apply First Nations knowledges to contemporary challenges. Students will examine interconnected social, cultural, and environmental systems, challenge deficit narratives, and design strength-based approaches for positive change in future professional contexts.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "COREX004"
+  },
+  {
+    "student_id": "S1000028",
+    "prior_course_title": "Dental Science and Practice I Part 1",
+    "prior_course_description": "From a patient care focus, this stream introduces students to the practice of dentistry and provides a foundation for understanding the normal structure and function of the oral cavity, evidence-based maintenance of patients' health and dentistry as a career. By working through a series of interactive learning activities, students develop an integrated knowledge base related to evidence-based patient care and related clinical skills and professional behaviours. These integrated learning activities present\u00a0various practice situations that focus on the initial phases of patient care and are supported by class meetings, laboratory, tutorial and clinical exercises. Learning is also supported by independent study and discussion of findings in class. Students work in a collaborative environment to learn to critically evaluate themselves, and plan and implement strategies for improvement. The stream emphasises the scientific basis of dentistry and integrated knowledge of the structure and function of selected body systems, including the normal appearance of oral soft and hard tissues, and main features of the masticatory system and key functions of a healthy body such as nutrient supply and waste removal, respiration, transport and movement, as a basis for the analysis of patients' oral health; reviews important ethical issues in dentistry; develops individual and group learning skills; provides clinical experiences related to the review of occupational health and safety, creation of dental records from patient histories and oral examination, the oral ecosystem in terms of balance and imbalance, preventive dentistry and maintenance of patients' oral health, at both individual and population health levels; and introduces students to behavioural sciences as applied to dentistry.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "DENT1000"
+  },
+  {
+    "student_id": "S1000029",
+    "prior_course_title": "Campaign Planning",
+    "prior_course_description": "The course provides students with a comprehensive understanding of the strategic process involved in planning and developing effective communication campaigns. Students will learn how to identify specific communication goals and objectives, conduct thorough research and analysis, and develop innovative campaign strategies and tactics to achieve desired outcomes. The course emphasises the importance of aligning communication campaigns with organisational objectives and stakeholder needs.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MDIA5003"
+  },
+  {
+    "student_id": "S1000030",
+    "prior_course_title": "Introduction to Mathematical Economics",
+    "prior_course_description": "The course introduces core mathematical techniques suitable for economic analysis. Through this course, students develop understanding of mathematical concepts such as basic algebra, simple finance, calculus and learn how to apply these tools to model and solve economic problems. Mastery of these methods enhances comprehension of economic theories, data interpretation, and decision-making. The course emphasizes critical thinking and problem-solving, preparing students for continued studies in economics and related fields, as well as careers in academia, government, and industry.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ECON1002"
+  },
+  {
+    "student_id": "S1000031",
+    "prior_course_title": "Dental & Health Science IIIOH (M) Part 1",
+    "prior_course_description": "This course consolidates and extends the foundational material covered in the first two years of the Bachelor of Oral Health program, with a strong emphasis on clinical application. Students will deepen their understanding of contemporary oral health philosophies and evidence-based practice. The course also explores oral health and disease at both individual and population levels, helping students appreciate the broader context of clinical care. The content is closely integrated with the course Clinical Practice IIIOH, where students will apply their learning in clinical settings. Key topic areas include: paedodontics, population oral health, extended adult care, pharmacology, panoramic radiography, oral pathology, community care and special needs dentistry. By the end of the course, students will be well prepared to translate theoretical knowledge into practical, patient-centred care.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "DENT3101"
+  },
+  {
+    "student_id": "S1000032",
+    "prior_course_title": "Specialist Clinical Orthodontics II Part 1",
+    "prior_course_description": "The University of Adelaide's postgraduate Doctor of Clinical Dentistry program in Orthodontics is of three years duration and leads to the specialist degree of Doctor of Clinical Dentistry. This course is part of a specific program designed to lead to specialist registration in the field of Orthodontics. The course comprises a mix of coursework, clinical work, and is designed to conform to the Educational Requirements of the University of Adelaide and the Australian Society of Orthodontists.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "DENT6004"
+  },
+  {
+    "student_id": "S1000033",
+    "prior_course_title": "Australian Indigenous Languages, Identity and Belonging",
+    "prior_course_description": "The aim of this course is to enable students to synthesise and consolidate theories in Indigenous knowledges as they relate to language, culture in the social sciences. Students will critically analyse aspects of Indigenous culture and language and demonstrate an understanding of how these relate to identity. Students will investigate the impact of the social sciences on Indigenous Peoples through an analytical focus on Indigenous Standpoint theory and the cultural interface.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "INDG5009"
+  },
+  {
+    "student_id": "S1000034",
+    "prior_course_title": "Literacy and Numeracy Across the Curriculum",
+    "prior_course_description": "This course aims to develop students' capacity to meaningfully integrate literacy and numeracy across the curriculum. A key focus will be on critically examining prevailing conceptions of literacy and numeracy, and analysing how national and international standardized assessments powerfully shape and constrain teaching and learning in these domains. Students will interrogate the assumptions, values and ideologies underpinning dominant approaches, and explore alternative frameworks that recognize the diverse funds of knowledge learners bring. The goal is to develop more expansive, equitable and contextually-responsive practices for embedding literacy and numeracy - informed by critical perspectives.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "EDUCX303"
+  },
+  {
+    "student_id": "S1000035",
+    "prior_course_title": "Social Licence to Operate",
+    "prior_course_description": "This course aims to equip students with the ability to build and maintain a Social Licence to Operate,\u00a0focussing on natural resource management and energy developments. With emphasis on sustainability\u00a0and equitable development, students will learn the role of and how to undertake stakeholder\u00a0consultation and incorporate this into organisational decision making.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BIOL5001"
+  },
+  {
+    "student_id": "S1000036",
+    "prior_course_title": "Active Lifestyles",
+    "prior_course_description": "This course aims to explore the place of physical activity in a range of populations from a health and wellbeing perspective. Content surrounds a range of physical activities and the health benefits and holistic wellbeing it offers through physical activity participation across the lifespan. The course will develop key skills in measuring physical activity levels, data analysis, digital literacy and teaching and learning a range of physical activities. Students will consider the place of lifelong physical activity and gain the knowledge and skills in planning and delivering physical activities to populations across the lifespan in a range of settings, as well as specifically to secondary school students aligned with the Australian curriculum.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "SPOR2003"
+  },
+  {
+    "student_id": "S1000037",
+    "prior_course_title": "Advanced French B",
+    "prior_course_description": "This course builds on the work undertaken in Advanced French A and gives tuition in stylistics, translation, register, advanced grammar and syntax, through regular assignments and class exercises (oral and written). It also seeks to develop research skills for language related questions.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "LANG3207"
+  },
+  {
+    "student_id": "S1000038",
+    "prior_course_title": "Mathematical Modelling",
+    "prior_course_description": "This course aims to enable learners to devise and apply deterministic and stochastic mathematical modelling techniques to real-world problems and case studies. Learners will also evaluate, solve, and analyse these mathematical models.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MATHX209"
+  },
+  {
+    "student_id": "S1000039",
+    "prior_course_title": "Australian Indigenous Languages (Level 2)",
+    "prior_course_description": "There were 250 or more Aboriginal and Torres Strait Islander languages spoken in Australia at the time of first contact with Europeans. Now, according to the latest National Indigenous Languages Survey (NILS II), only 13 of these languages are transmitted by normal means from one generation to the next. Australia has arguably the worst rate of language loss in the world. These languages are Australia's unique and complex linguistic heritage, which at times challenge established linguistic doctrines and provide interesting lenses through which to view and categorise the world. This course will provide an introduction to Australia's Indigenous languages (including Aboriginal English varieties, koines and creoles), with a particular focus on the Indigenous languages of South Australia. It will investigate structural features of Australian languages (for example, sounds, spellings, vocabularies, grammars, semantics) as well as their place within Australian society. Particular emphasis will be given to attempts to maintain and revive Australia's unique linguistic heritage and the linguistic tools needed for language work. The course will also investigate a range of topics of social importance including interpreting and translation, language and the law, language and health, language and education, language and identity which are at the heart of Indigenous rights and the very survival of Indigenous peoples. Students will gain an awareness of Australia's Indigenous linguistic heritage, whilst at the same time extending and consolidating their understanding of linguistics, linguistic analysis and the tools it provides for language work.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "INDG2003"
+  },
+  {
+    "student_id": "S1000040",
+    "prior_course_title": "Dental and Health Science IIOH Part 2",
+    "prior_course_description": "This course aims to build upon the knowledge gained in first year, as well as introduce new areas of contemporary dental practice. It consolidates the role of the oral health practitioner in community dental health issues and develops the knowledge of community needs assessment and health promotion. Topics include: community health needs assessment, health education, health protection, health prevention, program design and program evaluation.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "DENT2004"
+  },
+  {
+    "student_id": "S1000041",
+    "prior_course_title": "Essentials of Epidemiology",
+    "prior_course_description": "Epidemiology is used to describe health and disease, to understand determinants and to support evidence-based policy and practice. In this course you will consider the concepts, measures and data used in epidemiology to describe the magnitude of health issues. You will also focus on different research designs, including randomised controlled trials and the systematic review process to identify causes of disease and determine if treatments are effective. By examining real-world situations, you will explore challenges to feasibility and interpretation, and how the weight of evidence from epidemiology and other disciplines is drawn together. The role of epidemiology in improving population health will be a theme throughout.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "PUBH2002"
+  },
+  {
+    "student_id": "S1000042",
+    "prior_course_title": "UO Integrated Marketing",
+    "prior_course_description": "In this course students will integrate their knowledge of marketing developed through participation in various courses into a comprehensive understanding of marketing as a part of overall business management. It also exposes students to the vagaries of competition and provides practical experience in dealing with this fundamental issue. Marketing as a corporate philosophy; linking marketing to other business functions; introduction to the strategic marketing simulation; marketing management; budgeting for marketing; forecasting for business management; and achieving corporate outcomes with marketing.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MARK3012"
+  },
+  {
+    "student_id": "S1000043",
+    "prior_course_title": "Tourism and Hospitality Enterprise Management",
+    "prior_course_description": "The course provides students with theoretical and practical knowledge of the tourism and hospitality industry. The course gives a particular focus on developing competencies in the management of the supply side of tourism and hospitality \u2013 building their body of knowledge on tourism and hospitality enterprises, products, services, and experiences. The course focuses on the structure and characteristics of tourism and hospitality enterprises, their role in tourism destinations, and the factors that drive tourism and hospitality enterprise performance.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "HOSP5001"
+  },
+  {
+    "student_id": "S1000044",
+    "prior_course_title": "Culturally Responsive Pedagogy in First Nations Education",
+    "prior_course_description": "To prepare teachers and leaders to drive change in Australian schooling by examining and enacting theory in Culturally Responsive Pedagogy (CRP) that prioritises First Nations Educational Sovereignty. The course aims to: 1) Develop learners\u2019 appreciation of POSITIONALITY through awareness of the ways in which individuals\u2019 locations in society shape what they see. 2) Enhance learners\u2019 awareness of POWER, and how Australian school curriculum and pedagogy constitute spaces for the renegotiation of power. 3) Deepen learners\u2019 appreciation of PLACE for enabling students to connect what they are learning to their lived realities, communities, and Country. Workshops immerse learners in these big picture ideas and their micro-level manifestations through CRPs that are characertised by teaching that is: intellectually demanding; connected to lifeworlds; activist-oriented; multi-modal; socio-politically informed; place-based; dialogic; and world-facing.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "EDUC5131"
+  },
+  {
+    "student_id": "S1000045",
+    "prior_course_title": "Foundations of Research",
+    "prior_course_description": "This is a core course in the Graduate Certificate in Research Skills and Master of Research programs providing an introduction to the fundamentals of research for those who have no significant prior learning of research methods and skills. It forms a foundation from which further development of research skills can be undertaken through further coursework, and through the conduct of supervised research. Students will learn about the nature of research, how research is undertaken in different fields/disciplines, the role of social context for research, fundamentals of research methods, different ways of knowing and understanding, including Indigenous, creative and non-traditional knowledges.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "RESE5000"
+  },
+  {
+    "student_id": "S1000046",
+    "prior_course_title": "Superheroes: Cinema and Comics",
+    "prior_course_description": "One of the of the most popular forms of media of the early 21st century is inter-connected superhero films inspired by comic books. In this course, students will gain a deeper understanding of superhero films and comics and transmedia universes, as well as their historical influences, and the roles they have played in wider cultural debates about identity, power, ethics and society, using cutting edge digital tools to research these films and build important skills in data collection and analysis.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MDIA2020"
+  },
+  {
+    "student_id": "S1000047",
+    "prior_course_title": "UO Youth Justice",
+    "prior_course_description": "This course is designed to assist criminal justice students to understand the field of youth justice. This course will provide students with an understanding of the socio-historical and criminological concepts of youth justice as well as providing them with a broad understanding of the skills and competencies needed to work with young people. The theories, processes and practices of youth justice present special challenges for practitioners and policy-makers unique to working with young people. The course will explore the tension of youth justice as both a social welfare and criminal justice issue. This course explores the concept of justice as it applies to young people, through a historical, sociological and criminological lens. Consideration will be given to different international approaches to youth justice. Criminal justice and social justice concepts will be explored, including a consideration of the social welfare system as it applies to children and young people. Particular attention is given to the skills, knowledge and interpersonal strategies required to work with and support young people in the criminal justice field.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "CRIM2005"
+  },
+  {
+    "student_id": "S1000048",
+    "prior_course_title": "UO Health Practice Project 1",
+    "prior_course_description": "This two-part capstone course enables students to consolidate their undergraduate study and advance their learning into professional practice through the development of a public/community health project. The course is designed to challenge and extend the student's critical thinking and project management skills by scoping, planning and evaluating a health project that is responding to an authentic community need. Part one of the two-part capstone course integrates key skills and consolidates knowledge gained from the degree. Students will develop an independent public/community health project plan, based on an identified health need within a community. Students will work through the development process, but will not implement the project.  This first part of the capstone course focuses on the initiation and planning stages of the project, including: evidence-based design based on critical review of secondary data, project management skills, ethics and cultural safety.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "PUBH3010"
+  },
+  {
+    "student_id": "S1000049",
+    "prior_course_title": "Microwave Engineering",
+    "prior_course_description": "This course introduces the basics of RF Engineering. It covers a broad range of topics around RF devices and systems. The course illustrates how different building blocks such as amplifiers, oscillators and mixers, as well as guiding structures including transmission lines and waveguides, work together to build RF transmitters and receivers. It introduces important parameters and concepts related to these components, such as scattering matrices, impedance matching and non-linearities. The course shows how the electromagnetic theory applies to RF systems, and is a pathway towards more advanced courses on antennas & propagation and telecommunications.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ENGEX407"
+  },
+  {
+    "student_id": "S1000050",
+    "prior_course_title": "Consumer Behaviour",
+    "prior_course_description": "This course will cover fundamental knowledge about human behaviour and how this relates to buying behaviour. Students will gain an understanding of evidence-based theories to explain and predict consumer behaviour. Students will learn about well-established descriptive knowledge on patterns in buying behaviour that generalise over known conditions and how this fundamental knowledge can be applied to inform marketing decisions. Psychological, social, cultural and individual factors will also be investigated and how these influence buying behaviour.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MARK1001"
+  },
+  {
+    "student_id": "S1000051",
+    "prior_course_title": "Global Food and Nutrition Science Capstone Project A",
+    "prior_course_description": "This is a Capstone Course in the Master of Science (Global Food and Nutrition Science), building upon learnings from the first year of study in the Master of Science (Global Food and Nutrition Science). Each student will work on a research or industry related project, in conjunction with an experienced supervisory team in their field. Skills within a research and industry setting will be developed along with written and oral communication skills.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "FOOD6003"
+  },
+  {
+    "student_id": "S1000052",
+    "prior_course_title": "Survey Statistics",
+    "prior_course_description": "Surveys are central to understanding society and making effective, efficient and fair decisions. In this course students build upon the statistical modelling skills developed in previous years to specifically consider planning and analysis of different challenges faced in survey data. Students will gain skills in statistical tools specific to surveys including sample design, imputation techniques, development of weights, weighted analysis and model-based alternatives. This course will contribute to the program objectives of developing specialist knowledge and applying that knowledge to problems that arise in business and society.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "STATX402"
+  },
+  {
+    "student_id": "S1000053",
+    "prior_course_title": "Advanced French A",
+    "prior_course_description": "This course gives tuition in translation, phonetics, advanced grammar and syntax, through regular assignments and class exercises (oral and written). It also seeks to develop research skills for language related questions.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "LANG3206"
+  },
+  {
+    "student_id": "S1000054",
+    "prior_course_title": "Occupational Therapy Field Placement 1",
+    "prior_course_description": "The aim of this course is to enable students to apply and integrate knowledge and skills gained in the academic program to field practice in Occupational Therapy. Role of practice education/work based learning in developing professional competencies and graduate attributes. Interpersonal skills and therapeutic use of self in occupational therapy. Orientation to field practice: expectations, goal setting, effective use of supervision, self directed learning in practice settings, reflective practice and performance evaluation. Observation and participation in occupational therapy programs and service delivery, under supervision. Application of knowledge and skills gained in the academic program to field practice.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "OCCU5000"
+  },
+  {
+    "student_id": "S1000055",
+    "prior_course_title": "Composition 3B",
+    "prior_course_description": "This course seeks to develop advanced skills in a broad range of stylistic approaches for composing music primarily in the classical tradition.\u00a0A comprehensive study of the artistic, theoretical and practical dimensions of music composition is delivered in a variety of modes including individual tuition and tutorial. The course covers the traditional framework of music composition including form, harmony, counterpoint, orchestration, notation and text setting, along with studies in aesthetic and conceptual approaches.\u00a0Attention is given to the practical, vocational aspects of creative music making, including performance opportunities and the course seeks to develop composers who are technically well equipped in both traditional and modern compositional practice.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MUSI3005"
+  },
+  {
+    "student_id": "S1000056",
+    "prior_course_title": "Psychology for Social Contexts",
+    "prior_course_description": "The aim of this course is to provide students with foundational knowledge of the psychology of the interdependence among individuals within different social and environmental contexts, encompassing insights from social, cross-cultural and environmental psychology. Students will learn about a range of theories across these areas related to how individuals interact with each other and in broader social and environmental contexts. Students will learn how to analyse theories in the context of real-world scenarios and communicate their understanding in a range of assessment tasks.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "PSYC1002"
+  },
+  {
+    "student_id": "S1000057",
+    "prior_course_title": "Classical Performance 3A",
+    "prior_course_description": "Students undertake intensive 1:1 tuition in their chosen instrument (11 hours per Semester). Students must enrol in the relevant tuition class for their specialisation. Through the study of appropriate repertoire and technical exercises, students will develop their individual technical and musical potential, together with a sound understanding of interpretive principles and performance skills. Students are also expected to undertake a minimum of 10 hours per week of structured individual practice as designated by their instrumental teacher including repertoire study and a wide variety of technical exercises relevant to the student's chosen instrument. Through the Performance Classes, students will be given the opportunity to develop a range of preparation and performance practice skills. Through the Technique and Repertoire Classes, students will develop a range of skills and approaches which will aid their technical development, and will be given the opportunity to present, perform, and discuss their current repertoire with fellow students as 'work in progress'. Students are expected to further their development of their specialisation in Classical Performance 3A in advance of that achieved in Classical Performance 2B.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MUSI3027"
+  },
+  {
+    "student_id": "S1000058",
+    "prior_course_title": "Intermediate Applied Econometrics",
+    "prior_course_description": "This course introduces the econometric techniques used to analyse data sets in economics, finance and commerce and leads to further study of applied economics. The focus is on understanding the methods involved, using statistical software to provide the results and then interpreting and commenting on these results. The course builds on basic statistics, inference and regression and introduces multiple regression analysis, which remains the most commonly used statistical technique in econometrics. The remainder of the course considers various practical aspects of linear regression models and may include dummy variables, different functional forms and the consequences of violation of the classical regression assumptions.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ECON2002"
+  },
+  {
+    "student_id": "S1000059",
+    "prior_course_title": "Fundamentals of Business Analytics (UoA)",
+    "prior_course_description": "Students will be introduced to essential computing skills necessary to solve business analytic problems. Students will also be introduced to the fundamentals of data-driven decision making, providing a basis to transform qualitative business queries into quantifiable analytic solutions. In addition, the concepts of data warehousing and data wrangling will be covered as well as topics on cybersecurity and ethics.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BAFI5005"
+  },
+  {
+    "student_id": "S1000060",
+    "prior_course_title": "Contemporary Musicianship 1B",
+    "prior_course_description": "This course builds on skills introduced through Contemporary Musicianship 1A, continuing students' development of notational, theoretical and analytical skills with an emphasis on contemporary popular music. Lectures focus on with notion systems, intervals, chords and tonal harmony, simple and compound rhythm and diatonic voice leading. Students will systematically work through the development of tonal and non-tonal theory in Western music, learning the theoretical aspects of music making while developing the key skills in music literacy and harmonic analysis that are integral to contemporary music practice. Aural classes will focus on the development of secure listening and reading skills. Keyboard musicianship classes focus on developing skills centered on the practical application of theoretical and compositional content, and beneficial for the use of Digital Audio Workstations in their creative work.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MUSI1014"
+  },
+  {
+    "student_id": "S1000061",
+    "prior_course_title": "Immersive Media Production Project 2",
+    "prior_course_description": "This course provides an opportunity for students to apply their knowledge and skills to develop a functional immersive experience/prototype. Students will use their learning on project management and asset generation to self-direct the production of a virtual and interactive environment, extending their learning and improving techniques. Where possible, projects will maximise opportunities and collaborative learning.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "CREA3009"
+  },
+  {
+    "student_id": "S1000062",
+    "prior_course_title": "Biochemistry",
+    "prior_course_description": "The aim of this course is to provide students with a knowledge of the biochemical basis of biological systems. Amino acids, proteins; structure, biosynthesis, degradation of nucleotides; structure of DNA and chromatin. DNA, RNA and protein synthesis, effects of inhibitors; control of gene expression: enzyme properties and kinetics; coenzymes. Energy currency in cells and high energy bonds; citric acid cycle, electron transport, oxidative phosphorylation; carbohydrate metabolism; amino acid metabolism, urea cycle; fatty acid synthesis and catabolism; cholesterol synthesis, lipoproteins, signal transduction; control of metabolic pathways, utilisation of biological fuels; enzyme determinations.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BIOL2027"
+  },
+  {
+    "student_id": "S1000063",
+    "prior_course_title": "UO Social and Community Psychology",
+    "prior_course_description": "The aim of this course is to further develop students' knowledge of the concepts, theories, and methods for understanding social behaviour and the relationship between people and their social environment. Students will further develop their understanding of social and community research for understanding human psychology by exploring the basis of social behaviour in resources and social relationships, engaging in practical analysis of groups and communities including non-western communities and using analytical tools drawn from across the social sciences.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "PSYC2022"
+  },
+  {
+    "student_id": "S1000064",
+    "prior_course_title": "Critical Evaluation in Data Science",
+    "prior_course_description": "Critical appraisal of the design, application and communication of data science.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MATHX106"
+  },
+  {
+    "student_id": "S1000065",
+    "prior_course_title": "Women\u2019s and Children\u2019s Health (Rural) Part 2",
+    "prior_course_description": "This course combines experiential learning in placement with integrated teaching and assessment across all domains of the Doctor of Medicine program. It builds on skills and knowledge developed in the previous courses of the program.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MEDI5004"
+  },
+  {
+    "student_id": "S1000066",
+    "prior_course_title": "Quantitative Methods in Social Research",
+    "prior_course_description": "How do you find and interpret the latest violent crime rate data? What factors put Australians at risk of becoming victims of a crime? What factors influence Australians' perception of the police force? What factors have caused the Australian housing crisis? Does sexual orientation affect civic and political participation? How do you decipher the Results and Discussion sections of journal articles or government reports? How do you design a simple survey questionnaire that could tell you things that the existing data cannot? This course will teach you to use the tools of quantitative research methods to answer these and other questions. The focus will be on the logic of quantitative reasoning and its application to practical problems in social science research. Please note that mathematical proofs, complex calculations, abstract probability theory, and the like will not be discussed. We will focus on survey research and statistical techniques to analyse data collected in surveys. We will also spend time looking at other sources of quantitative data, including data compiled by various Australian government agencies. By the end of the course, you will be able to read, understand, and critically evaluate several types of quantitative data presented in research reports, books and journal articles.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "SOCI2101"
+  },
+  {
+    "student_id": "S1000067",
+    "prior_course_title": "Bayesian Statistical Theory",
+    "prior_course_description": "In this course, students will explore advanced Bayesian theory and application.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "STAT4019"
+  },
+  {
+    "student_id": "S1000068",
+    "prior_course_title": "Media Cultures in Context",
+    "prior_course_description": "This course will focus on understanding media as a dynamic network of intersecting cultures, economies, institutions, and texts. Students will be introduced to knowledge and theories about the history, evolution, and proliferation of media cultures, including TV, film, video games, social media, and podcasting, and consider contemporary shifts in the production and consumption of media texts.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MDIA1015"
+  },
+  {
+    "student_id": "S1000069",
+    "prior_course_title": "Data in Information Technology Systems",
+    "prior_course_description": "This course introduces learners to data as an asset and data lifecycle (creation, collection, processing, storage/archiving, use, disposal). Explains structured, semi-structured and unstructured data and approaches to their storage and manipulation in context of IT/IS in business and professions. This course introduces students to concepts of data provenance, data semantics (data dictionaries, ontologies) and data quality.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "COMP5003"
+  },
+  {
+    "student_id": "S1000070",
+    "prior_course_title": "Finance Industry Project 1",
+    "prior_course_description": "This project-based course engages students in a equity-research and risk-advisory project reflecting real industry practice. Working in teams, students' scope, plan, and execute a full analytical engagement, applying advanced valuation and risk-management techniques. Each project stage requires managing data, deadlines, and stakeholder expectations while producing authentic professional outputs such as analyst reports, crisis memos, and board-style presentations. The experience develops the analytical rigour, ethical awareness, and collaborative soft skills expected of finance professionals operating in complex, high-pressure environments.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BUSI6030"
+  },
+  {
+    "student_id": "S1000071",
+    "prior_course_title": "UO Construction Environmental Science",
+    "prior_course_description": "The aim of this course is to demonstrate the physical principles used in the design and management of buildings to create environmentally suitable and sustainable conditions. Climate change, greenhouse emissions, solar radiation, energy efficiency, environmentally sustainable design parameters focusing on passive design strategies, indoor environmental quality, including thermal, lighting and acoustic comfort, water management and efficiency, renewable energy generation.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BLDG2008"
+  },
+  {
+    "student_id": "S1000072",
+    "prior_course_title": "UO Construction Business Management",
+    "prior_course_description": "The aim of this course is to provide students with knowledge and skills to strategically and successfully manage businesses in the construction environment. Organisational structures and behaviour of construction firms; Strategic management principles (SWOT analysis, goal setting, monitoring etc.); Management principles; Head office function, personnel and resources; Leadership and communication; Business planning/strategy; Business relationships; Marketing principles; Fundamental financial accounting principles (profit and loss statements, balance sheets, debt management etc.); project management body of knowledge applied to business management; Business Ethics.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BLDG4012"
+  },
+  {
+    "student_id": "S1000073",
+    "prior_course_title": "Insolvency Law (UniSA)",
+    "prior_course_description": "The aim of this course is to provide students with an advanced understanding of Insolvency Law, both in the context of personal insolvency (bankruptcy) and corporate insolvency. Process and consequences of bankruptcy and liquidation; assets available for distribution in the case of bankruptcy and liquidation; administration and termination of bankruptcy and liquidation; alternatives to bankruptcy; company reorganisation; secured creditors and receivership; cross-border insolvency.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "LAWS1115"
+  },
+  {
+    "student_id": "S1000074",
+    "prior_course_title": "Animal Nutrition and Metabolism 3",
+    "prior_course_description": "This course provides students with a solid grounding in animal metabolism and nutrition to allow them to develop sound, evidence-based advice to clients wishing to maximise the profitability, health, longevity, product quality or athletic performance of animals. The course builds on a platform of knowledge of nutritional principles and the roles of energy, protein, lipids, carbohydrates, macro- and micro-nutrients in biochemical pathways. These principles are then applied to feed formulation for dogs, cats, horses, beef cattle, dairy cattle, sheep, pigs, poultry, wildlife, pocket pets, exotic animals, and farmed finfish. The consequences of an inadequate supply of the essential nutrients are considered in detail. The course has a strong hands-on, practical focus to develop in students an awareness of the importance of nutrition as a frontline determinant of animal health, welfare and production. Emphasis is placed on self-initiative, the development of skills in teamwork, and the application of a critical, science-based approach to practical nutrition.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ANIM3003"
+  },
+  {
+    "student_id": "S1000075",
+    "prior_course_title": "Beginners French A",
+    "prior_course_description": "This course introduces students to the language and culture of contemporary France. In addition to intensive language training in the four basic skills - listening, speaking, reading and writing - various aspects of French society and culture will be introduced through audio and video extracts and short texts. The emphasis throughout will be on communicative skills, both oral and written.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "LANG1205"
+  },
+  {
+    "student_id": "S1000076",
+    "prior_course_title": "Introduction to Health Research",
+    "prior_course_description": "This course aims to equip students with foundational concepts and skills for research in health sciences. Introducing concepts of health and research, this course provides knowledge on research methods, interpretation of research outputs and critical appraisal of literature. Further this course will enhance student\u2019s skill and confidence in oral, written and interpersonal communication equipping student with the capacity to provide and communicate solution and knowledge to others. Expanding students' awareness of future career pathways and understanding the relevance of essential skill development required to achieve career success will be explored. This course aligns with the intent of programs from the biomedical and health sciences field to provide a comprehensive ability to find, interpret and apply research methods, preparing learners for careers across diverse health settings.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "HLTH1002"
+  },
+  {
+    "student_id": "S1000077",
+    "prior_course_title": "Health Professional Essentials",
+    "prior_course_description": "The aim of this course is to provide commencing students with the necessary numerical, ethical and academic writing skills and an introduction to appropriate professional behaviours, rights and responsibilities. Basic numeracy, arithmetic and algebraic skills underpinning laboratory and dosage calculations, SI units, powers and nomenclature, unit conversion, molarity and concentration units, dilution factors and data representation. Basics of bioethics and research ethics, introduction to indigenous cultural awareness. The role of empirical evidence in making decisions in health practice, understanding, questioning and evaluating evidence. Basics of professional behaviour and codes of conduct (including student codes), rights, responsibilities and consequences. Succinct academic writing.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "PHAR1004"
+  },
+  {
+    "student_id": "S1000078",
+    "prior_course_title": "UO Capstone Project 2",
+    "prior_course_description": "The aim of this course is to apply information technology principles and practices to a complex real world problem. A range of topics related to the implementation of a Capstone Project.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "INFO3014"
+  },
+  {
+    "student_id": "S1000079",
+    "prior_course_title": "Clinical Musculoskeletal Physiotherapy",
+    "prior_course_description": "The aim of this course is to develop advanced knowledge of clinical syndromes of the musculoskeletal system and their underlying biopsychosocial constructs and proficiency in the autonomous assessment and management of individuals presenting for a physiotherapy service. This course provides direct, best practice experience of a private health service delivery model. Students will be responsible for organising and managing all aspects of patient care including an evidence based approach to clinical assessments and interventions, monitoring of progress using appropriate outcome measures, education, and decision-making regarding continuation or cessation of care or on-referral. Students will perform administrative tasks (appointment booking, statistics, etc.,) consistent with requirements of private health service delivery.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "REHB4010"
+  },
+  {
+    "student_id": "S1000080",
+    "prior_course_title": "Health Economics",
+    "prior_course_description": "Health economics is the study of how scarce healthcare resources are allocated among competing interventions and among groups in society. This course introduces basic concepts and practical issues faced by decision-makers at all levels in the health system in allocating scarce resources so that the choices they make maximise health benefits to the population. This course covers four main areas of learning: 1. An introduction to key concepts of health economics (e.g. opportunity costs), the demand for and supply of health services, fundamentals of markets and the price mechanism with a focus on the healthcare market; 2. An introduction to economic evaluation in healthcare, with an emphasis on identifying, measuring, valuing and analysing health outcomes and costs. 3. This module focuses on the presentation and interpretation of the results of economic evaluation and the use of economic evaluation to inform funding decisions 4. An overview of the organisation of health care (provision and funding). The organisation and finance of the Australian health system will be specifically analysed and compared internationally.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "PUBH2022"
+  },
+  {
+    "student_id": "S1000081",
+    "prior_course_title": "Human Neuroscience GE",
+    "prior_course_description": "The aim of this course is to develop a specialised body of knowledge of human neuroanatomy, neurophysiology and pathology which will be integrated with their prior anatomy and physiology knowledge. This will enable students to understand the neurological dimensions of human development, ill health and disorders for specific application to occupational therapy practice. Gross anatomy of peripheral and central nervous structures including spinal cord and spinal cord pathways, cranial and spinal nerves, brain regions and nerve pathways for body movement, cognitive function and autonomic nervous system. Functional topography of the human brain and sensory nerve pathways that bring signals of sensation (including vision). Mechanisms of pain and analgesia, movement and postural control, vision, learning and memory, behaviour and emotion. Basic neurophysiology of neurons and communication. Central and peripheral nerve regeneration and neuroplasticity. Pathophysiology of effects of focal and generalised lesions of the CNS and disorders of the nervous system, including visual, cerebrovascular, dementia, disorders of movement and postural control, epilepsy, and some development disorders.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BIOL5022"
+  },
+  {
+    "student_id": "S1000082",
+    "prior_course_title": "UO Digital Media Project 2",
+    "prior_course_description": "The aim of this course is to apply and consolidate digital media studies and contexts to an innovative self-identified project. Students will identify and undertake a project applying digital skills and knowledge to establish connections between research and a range of digital media contexts including animation, collections and digital technologies.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "GRAP2015"
+  },
+  {
+    "student_id": "S1000083",
+    "prior_course_title": "Health Ethics",
+    "prior_course_description": "The aim of this course is to advance students' knowledge of ethical theories and approaches and analytical capability in examining public health research, policy and practice issues. Philosophical perspectives on ethics. Ethical issues for the health professional in clinical practice, research and management. Health professionals in society.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "HLTH5000"
+  },
+  {
+    "student_id": "S1000084",
+    "prior_course_title": "Master of Psychology (Clinical) Placement II",
+    "prior_course_description": "This Placement provides education and training in professional practice and skills to prepare the student for registration with the Australian Health Practitioner Regulation Agency (AHPRA).",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "PSYC6916"
+  },
+  {
+    "student_id": "S1000085",
+    "prior_course_title": "Performance and Pedagogy V",
+    "prior_course_description": "The primary purpose of this course is to provide students with the opportunity to further develop both their performance skills and their level of pedagogical understanding. Students will prepare and deliver a lecture recital of 50 minutes duration, which may include a viva voce. In the lecture recital students will demonstrate their understanding of key repertoire and technical skills associated with their instrument, alongside their individual level of performance and musical interpretation. Preparatory work will be supervised individually or in small groups as approved by the Conservatorium and will involve the student in considerable time spent developing specialist knowledge, skills and insights bearing upon the program of works to be presented. A performance class will support the students learning experience. Clear and detailed documentation in a reflective journal of activities including lesson observations, reflections, rehearsal and concert observations and attendance at Elder Conservatorium based activities",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "MUSI6002"
+  },
+  {
+    "student_id": "S1000086",
+    "prior_course_title": "Enabling Occupation 5",
+    "prior_course_description": "The aim of this course is to develop competence for occupational therapy practice in the areas of work/employment and of upper limb injury. Understanding the issues for occupational performance work and employment that may arise from traumatic injuries to the upper limb, chronic pain, and back injury. Exploration of occupational therapy and other approaches to the management of these issues. Management of traumatic injuries to the upper limb including dynamic splinting. Legislative, ethical and medico-legal and reporting aspects of scenarios and their implications for practice. Analysis of cultural and health beliefs relating to health, disability and work and implications for practice. Strategies and techniques for enabling occupational performance that are relevant to work and employment, including advanced occupational analysis, assessing work capacity, comparing human capacities to occupational demands, workplace assessments, application of biomechanical principles (including manual handling), application of ergonomic principles, development of graded programs, negotiation, modification of work and environment, work safety assessment, issues and approaches in teamwork, case management, and working with organisations that are common when working with people with disorders affecting work and employment.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "OCCU6003"
+  },
+  {
+    "student_id": "S1000087",
+    "prior_course_title": "UO Globalised Crime",
+    "prior_course_description": "This course aims to provide students with an in-depth understanding of the impacts of globalisation on crime and the emerging categories of transnational and international crime. Students will critically analyse the transnational and international dimensions of crime and use criminological theory to evaluate responses to globalised crimes. Crime is an increasingly global phenomenon that traverses national borders. This course will examine how crime operates in a global world by examining transnational and international crimes such as trafficking, organised crime, terrorism, crimes against humanity, and war crimes. The course will consider conceptual issues with globalisation that impact how crime is committed and controlled. It will look at the complexities of investigating and prosecuting crimes across borders, as well as international efforts to regulate and punish crimes at a global level.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "CRIM3008"
+  },
+  {
+    "student_id": "S1000088",
+    "prior_course_title": "Curriculum Development in EALD/TESOL",
+    "prior_course_description": "The students will develop an integrated understanding of the complex range of aspects and elements of curriculum for English as an additional language or dialect, and become familiar with principles of curriculum development in TESOL. Guided by an advanced and sound understanding of the theoretical and practical range of issues concerning the relationship between policy and curriculum, as well as the contextual factors and learners' needs, the students will analyse, develop, critique and rationalise language programs for TESOL, formulating curriculum intentions, conceptualising curriculum content, critiquing, selecting, adapting and creating curriculum resources, and designing learner assessment, to achieve the intended goals established for the target TESOL setting.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "EDUCX414"
+  },
+  {
+    "student_id": "S1000089",
+    "prior_course_title": "Communicating Science",
+    "prior_course_description": "Communicating Science equips students with the essential skills and knowledge to effectively communicate scientific concepts to diverse audiences. This course is designed for students who are passionate about bridging the gap between science and society through effective communication and welcomes students from various disciplines, including sciences, humanities, and social sciences. Upon successfully completing Communicating Science, students will be equipped with the skills, knowledge, and attitudes necessary to excel in science communication roles and contribute to fostering public understanding of science. Students will be prepared for diverse career opportunities in science journalism, public relations, science advocacy, science policy, museum curation, and other related fields. Students will hone their written communication abilities by producing compelling content suitable for diverse publications, including blogs, press releases, and feature articles. They will also refine their oral communication skills through delivering captivating speeches and learning how to distil complex ideas into concise soundbites. Off-campus excursions to science exhibitions will provide students with firsthand experiences in science communication outside written and oral forms. Students will observe and analyse different communication strategies employed in these settings, enhancing their understanding of engaging diverse audiences and making complex scientific concepts accessible and relevant. By successfully completing these assessments, students will demonstrate their ability to communicate science effectively, responsibly, and ethically.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "SCIEX300"
+  },
+  {
+    "student_id": "S1000090",
+    "prior_course_title": "Genes and Inheritance 2",
+    "prior_course_description": "This course will provide a comprehensive introduction to key concepts in genetics as relevant to\u00a0the animal industries. The course will cover topics in Mendelian inheritance, molecular genetic\u00a0technologies, population genetics and quantitative genetics. Students will apply understanding of\u00a0the nature and structure of genetic material, the role of genes in determining the characteristics\u00a0of organism and the basis of inheritance to the context of animal husbandry and understanding\u00a0and management of animal populations.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ANIM2005"
+  },
+  {
+    "student_id": "S1000091",
+    "prior_course_title": "Environmental and Resource Economics and Applications",
+    "prior_course_description": "This course applies the critical thinking and practical reasoning of economic analysis to the management of environmental and natural resources and examines the role of economic theory in understanding and solving environmental and resource problems. Domestic and international empirical evidence will illustrate real-world applications and implications. There will be a strong focus on topical policy issues, such as, air and water pollution, species loss, single-use plastics, renewable and non-renewable resource management (fisheries, forests, and minerals), and the impact of trade. A key assessment component will involve students undertaking a significant policy project regarding a topical resource or environmental issue.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ECON6004"
+  },
+  {
+    "student_id": "S1000092",
+    "prior_course_title": "Power Electronics and Drive Systems",
+    "prior_course_description": "This course aims to provide students with a comprehensive understanding of how to efficiently convert and control electrical power, focusing on the characteristics of power electronic devices and their switching performance, power losses and thermal design. This enabling technology covers the classes of power converters, including rectifiers, AC-AC converters, DC-DC converters, inverters, voltage and current source converters, hard and soft-switching, resonant circuits and power supplies. The course further explores advanced energy-efficient motor drives, reviewing motor theory, power electronic control principles, vector and servo drives (stepper, DC, induction, brushless PM, and switched-reluctance), modulation methods, and motor and drive selection and application. It emphasizes system design, implementation, control, computer interfacing, and electromagnetic interference, providing insight and defining common characteristics for future industrial drives spanning from robotics to electric vehicles and renewable energy integration.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "ENGEX409"
+  },
+  {
+    "student_id": "S1000093",
+    "prior_course_title": "Introduction to Online Educational Media",
+    "prior_course_description": "This course will introduce the different types of media which can be used online in an educational context. It will provide examples of these types of media and the ways in which they can be evaluated, and introduce the educational theories and frameworks that support their use.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "EDUC1021"
+  },
+  {
+    "student_id": "S1000094",
+    "prior_course_title": "Design Thinking: Problems to Practice",
+    "prior_course_description": "In this highly interactive course, students will develop a working knowledge of the design thinking methodology and numerous supporting frameworks, tools and techniques by applying human-centred processes to dissect project ideas into component parts, to redefine problems, generate ideas, and prioritise those ideas to develop and test a prototype to achieve optimal innovative solutions.\u202fStudents will then assess steps to implement the solution through change management principles, and consider ways to monitor the anticipated impact achieved or whether further iteration is required. Working manually through these processes will help students to develop the skills to critically think through complex problems and conceive numerous innovative options as solutions.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BUSI1004"
+  },
+  {
+    "student_id": "S1000095",
+    "prior_course_title": "Entrepreneurial Business Development",
+    "prior_course_description": "This course prepares postgraduate students to lead innovation and entrepreneurial initiatives across diverse contexts\u2014startups, corporations, social enterprises, and academic spinouts. It delivers a deep exploration of business development, entrepreneurial innovation programs, customer-centric thinking, and strategic commercialisation. Through a 12-module sequence, students apply lean and agile methodologies, map innovation ecosystems, and develop real-world entrepreneurial proposals aligned with stakeholder needs and strategic objectives.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BUSI5031"
+  },
+  {
+    "student_id": "S1000096",
+    "prior_course_title": "Biotechnology (Biomedical) Research Project\u00a0A",
+    "prior_course_description": "This course is designed to develop the practical and professional skills required for a successful career in scientific research or related activities. It provides advanced education and training in the principles of scientific research and the current state of knowledge and techniques used in the field of biomedical research. Students learn to search for and critically evaluate scientific literature relevant to their chosen discipline, to plan and design scientific experiments, and to develop advanced written and verbal communication skills. Each student is expected to carry out a laboratory-based research project during the year. At the end of the year, students will write up their project outcomes in a thesis, using a format similar to that of a scientific research publication.\u00a0 Students give a formal presentation of their final research, followed by an oral defence of their findings and conclusions. This course must be completed in conjunction with Biotechnology (Biomedical) Research Project B and students must take both A and B. These combined courses are the capstone to the Master of Science (Biotechnology) program, integrating and applying the knowledge and skills developed in the first year, to real-world biotechnology research.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "BIOL6011"
+  },
+  {
+    "student_id": "S1000097",
+    "prior_course_title": "Life Drawing",
+    "prior_course_description": "This course aims to develop learners\u2019 skills and knowledge to explore principles and practice of drawing the human figure and develop drawing accuracy and interpretive abilities. The course builds learners\u2019 knowledge and skills in life drawing by fostering a variety of approaches to observing, analysing and drawing the human figure while reflecting on their own and others\u2019 life drawing practice. Students in this course develop observational drawing, use a range of drawing mediums, and employ conceptual and technical processes relevant to the field.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "GRAP2004"
+  },
+  {
+    "student_id": "S1000098",
+    "prior_course_title": "Sport Practice",
+    "prior_course_description": "The course is designed to build pedagogical content knowledge across various sports, with a focus on fostering inclusion and developing skilled players at all levels\u2014from beginners to elite athletes. Through in-depth analysis of sport and pedagogy, it connects theory and practice to enhance teaching and coaching abilities. Participants will learn to design effective learning environments, deliver engaging presentations, and facilitate both learning and individual development.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "EDUC3008"
+  },
+  {
+    "student_id": "S1000099",
+    "prior_course_title": "Cloud Platforms",
+    "prior_course_description": "This course provides students with the knowledge and skills necessary to develop and implement IT infrastructures using cloud technologies, with a focus on Amazon Web Services (AWS). By exploring cloud concepts, core services and security measures, students will be prepared to evaluate, select, and implement cloud-based solutions that align with organisational requirements.",
+    "prior_institution": "Test University (synthetic)",
+    "expected_course_code": "INFO2004"
+  }
+]

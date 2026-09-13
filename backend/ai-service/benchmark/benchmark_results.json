@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-08-19 07:58:55",
+  "eval_set_size": 9,
+  "eval_sources": [
+    "institution_a.json",
+    "institution_b.csv",
+    "institution_c.xml"
+  ],
+  "results": [
+    {
+      "model_id": "qwen2.5-0.5b",
+      "display_name": "Qwen2.5 0.5B Instruct",
+      "hf_repo": "Qwen/Qwen2.5-0.5B-Instruct",
+      "mode": "huggingface",
+      "params_billion": 0.5,
+      "precision_at_1": 1.0,
+      "recall_at_1": 1.0,
+      "correct": 9,
+      "total": 9,
+      "avg_latency_ms": 17436.4,
+      "process_rss_before_mb": 16.9,
+      "process_rss_after_load_mb": 2855.6,
+      "process_rss_after_inference_mb": 2809.9,
+      "model_load_memory_delta_mb": 2838.7,
+      "python_peak_traced_memory_mb": 273.3
+    },
+    {
+      "model_id": "gemma-2-2b",
+      "display_name": "Gemma 2 2B Instruct",
+      "hf_repo": "google/gemma-2-2b-it",
+      "mode": "mock",
+      "params_billion": 2.0,
+      "precision_at_1": 0.0,
+      "recall_at_1": 0.0,
+      "correct": 0,
+      "total": 9,
+      "avg_latency_ms": 0.4,
+      "process_rss_before_mb": 1058.5,
+      "process_rss_after_load_mb": 1058.5,
+      "process_rss_after_inference_mb": 1058.5,
+      "model_load_memory_delta_mb": 0.0,
+      "python_peak_traced_memory_mb": 0.0
+    },
+    {
+      "model_id": "gpt-oss-20b",
+      "display_name": "GPT-OSS 20B",
+      "hf_repo": "openai/gpt-oss-20b",
+      "mode": "mock",
+      "params_billion": 20.0,
+      "precision_at_1": 0.0,
+      "recall_at_1": 0.0,
+      "correct": 0,
+      "total": 9,
+      "avg_latency_ms": 0.3,
+      "process_rss_before_mb": 1058.5,
+      "process_rss_after_load_mb": 1058.5,
+      "process_rss_after_inference_mb": 1058.5,
+      "model_load_memory_delta_mb": 0.0,
+      "python_peak_traced_memory_mb": 0.0
+    },
+    {
+      "model_id": "phi-3-mini",
+      "display_name": "Phi-3 Mini 3.8B Instruct",
+      "hf_repo": "microsoft/Phi-3-mini-4k-instruct",
+      "mode": "mock",
+      "params_billion": 3.8,
+      "precision_at_1": 0.0,
+      "recall_at_1": 0.0,
+      "correct": 0,
+      "total": 9,
+      "avg_latency_ms": 0.5,
+      "process_rss_before_mb": 1058.5,
+      "process_rss_after_load_mb": 1058.5,
+      "process_rss_after_inference_mb": 1058.5,
+      "model_load_memory_delta_mb": 0.0,
+      "python_peak_traced_memory_mb": 0.0
+    }
+  ]
+}

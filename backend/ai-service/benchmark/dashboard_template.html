@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Model Benchmark Dashboard — Credit Mapping AI</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --border: #2a3038;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --accent: #4fd1c5;
+    --accent-2: #f2a154;
+    --warn-bg: #3d2b12;
+    --warn-border: #c9862f;
+    --mono: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    margin: 0;
+    padding: 32px 24px 64px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 700; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .subtitle { color: var(--text-dim); font-size: 13px; margin-bottom: 20px; }
+  .banner {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: #f2c078;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: var(--mono);
+    margin-bottom: 24px;
+  }
+  .meta-row {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    font-size: 12px; color: var(--text-dim); font-family: var(--mono);
+    margin-bottom: 28px;
+  }
+  .meta-row span b { color: var(--text); }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+  }
+  .panel h2 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-dim); margin: 0 0 16px; font-weight: 600;
+  }
+  .chart-row { display: flex; flex-direction: column; gap: 10px; }
+  .bar-item { display: grid; grid-template-columns: 160px 1fr 60px; align-items: center; gap: 10px; }
+  .bar-label { font-size: 13px; color: var(--text); }
+  .bar-track { background: #21262d; border-radius: 4px; height: 18px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .bar-value { font-family: var(--mono); font-size: 12px; color: var(--text-dim); text-align: right; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--text-dim); font-weight: 600; font-size: 11px;
+       text-transform: uppercase; letter-spacing: 0.04em; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+  td { padding: 8px 10px; border-bottom: 1px solid #1c2128; font-family: var(--mono); font-size: 12px; }
+  td.name-col { font-family: 'Inter', sans-serif; font-size: 13px; }
+  .source-tag { display: inline-block; background: #1c2128; border: 1px solid var(--border); border-radius: 4px;
+                padding: 2px 8px; font-size: 11px; font-family: var(--mono); color: var(--accent); margin-right: 6px; }
+  .footer-note { color: var(--text-dim); font-size: 12px; margin-top: 24px; line-height: 1.6; }
+  .footer-note code { background: #1c2128; padding: 1px 5px; border-radius: 3px; font-family: var(--mono); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Credit Mapping — Model Benchmark Dashboard</h1>
+  <div class="subtitle">Agentic AI Credit Mapping System · PG-S2-33</div>
+
+  <div class="banner" id="statusBanner"></div>
+
+  <div class="meta-row">
+    <span>Eval set size: <b id="evalSize"></b> records</span>
+    <span>Sources: <b id="evalSources"></b></span>
+    <span>Generated: <b id="generatedAt"></b></span>
+  </div>
+
+  <div class="panel">
+    <h2>Precision @ 1</h2>
+    <div class="chart-row" id="precisionChart"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Average Latency (ms)</h2>
+    <div class="chart-row" id="latencyChart"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Estimated Memory Footprint (GB RAM)</h2>
+    <div class="chart-row" id="memoryChart"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Model Parameters &amp; Source</h2>
+    <table>
+      <thead>
+        <tr><th>Model</th><th>HF Repo</th><th>Params</th><th>Why included</th></tr>
+      </thead>
+      <tbody id="paramsTable"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <h2>Evaluation Data Sources (multi-format)</h2>
+    <div>
+      <span class="source-tag">JSON</span> institution_a.json — 3 records
+      <br><span class="source-tag">CSV</span> institution_b.csv — 3 records
+      <br><span class="source-tag">XML</span> institution_c.xml — 3 records (scraped-transcript style)
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <b>How this was generated:</b> the benchmark harness (<code>benchmark/run_benchmark.py</code>) loads all three
+    data sources, embeds each prior-course record, retrieves the closest matching Adelaide course, and checks it
+    against the known expected mapping — computing real precision/recall, latency, and process memory deltas.
+    This sandbox has no network access to huggingface.co, so real model weights could not be downloaded here;
+    the harness was verified to work correctly (with a mock provider), and the numbers above are
+    <b>simulated based on typical characteristics of each model size</b>, not measured. Rerun
+    <code>run_benchmark.py</code> with <code>mode: "huggingface"</code> in <code>benchmark/model_registry.py</code>
+    on Colab or a local machine with GPU access to get real numbers before presenting this externally.
+  </div>
+</div>
+
+<script>
+const data = __DASHBOARD_DATA__;
+
+document.getElementById('statusBanner').textContent = "⚠ " + data.status;
+document.getElementById('evalSize').textContent = data.eval_set_size;
+document.getElementById('evalSources').textContent = data.eval_sources.join(', ');
+document.getElementById('generatedAt').textContent = data.generated_at;
+
+const colors = ['#4fd1c5', '#f2a154', '#a78bfa', '#f87171'];
+
+function renderBarChart(containerId, items, valueKey, maxValue, formatter) {
+  const container = document.getElementById(containerId);
+  items.forEach((item, i) => {
+    const pct = Math.max(4, (item[valueKey] / maxValue) * 100);
+    const row = document.createElement('div');
+    row.className = 'bar-item';
+    row.innerHTML = `
+      <div class="bar-label">${item.display_name}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%; background:${colors[i % colors.length]}"></div></div>
+      <div class="bar-value">${formatter(item[valueKey])}</div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+const results = data.results;
+
+renderBarChart('precisionChart', results, 'precision_at_1', 1.0, v => (v * 100).toFixed(0) + '%');
+renderBarChart('latencyChart', results, 'avg_latency_ms', Math.max(...results.map(r => r.avg_latency_ms)), v => v + 'ms');
+renderBarChart('memoryChart', results, 'estimated_ram_gb', Math.max(...results.map(r => r.estimated_ram_gb)), v => v + 'GB');
+
+const tbody = document.getElementById('paramsTable');
+results.forEach(r => {
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td class="name-col">${r.display_name}</td>
+    <td>${r.hf_repo}</td>
+    <td>${r.params_billion}B</td>
+    <td class="name-col">${r.source_note}</td>
+  `;
+  tbody.appendChild(row);
+});
+</script>
+</body>
+</html>

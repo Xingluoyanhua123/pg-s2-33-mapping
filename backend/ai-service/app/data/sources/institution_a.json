@@ -1,0 +1,23 @@
+[
+  {
+    "student_id": "S1000001",
+    "prior_course_title": "Introduction to Python Programming",
+    "prior_course_description": "Covers variables, loops, functions, and basic data structures using Python.",
+    "prior_institution": "University of Melbourne",
+    "expected_mapping": "COMP_SCI 1013"
+  },
+  {
+    "student_id": "S1000002",
+    "prior_course_title": "Algorithms and Data Structures",
+    "prior_course_description": "Trees, graphs, hash tables, sorting algorithms, and time complexity analysis.",
+    "prior_institution": "University of Melbourne",
+    "expected_mapping": "COMP_SCI 2100"
+  },
+  {
+    "student_id": "S1000003",
+    "prior_course_title": "Relational Databases and SQL",
+    "prior_course_description": "Database design, normalization, SQL queries, and transaction management.",
+    "prior_institution": "University of Melbourne",
+    "expected_mapping": "COMP_SCI 3200"
+  }
+]

@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+sentence-transformers
+transformers
+torch
+pytest
+httpx
+psutil

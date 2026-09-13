@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transcripts>
+  <record student_id="S3000001" institution="UNSW Sydney" expected_mapping="COMP_SCI 2209">
+    <course_title>Full-Stack Web Development</course_title>
+    <course_description>Frontend frameworks, backend REST APIs, and database integration for web applications.</course_description>
+  </record>
+  <record student_id="S3000002" institution="UNSW Sydney" expected_mapping="COMP_SCI 1013">
+    <course_title>Programming Fundamentals with Python</course_title>
+    <course_description>Basic programming concepts including variables, control flow, and functions.</course_description>
+  </record>
+  <record student_id="S3000003" institution="UNSW Sydney" expected_mapping="COMP_SCI 3306">
+    <course_title>Applied Machine Learning</course_title>
+    <course_description>Practical machine learning workflows, model training, and evaluation metrics.</course_description>
+  </record>
+</transcripts>
