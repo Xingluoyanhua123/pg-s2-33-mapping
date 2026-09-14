@@ -353,4 +353,73 @@ td div {
     width: 100%;
     min-width: 0;
   }
+}/* Course workspace and floating assistant */
+:root { color: #202332; background: #f7f7f5; }
+.page { max-width: 1280px; padding: 0 36px 110px; }
+.topbar { display:flex; align-items:center; justify-content:space-between; padding:24px 0; border-bottom:1px solid #e3e4e8; }
+.brand { display:flex; gap:12px; align-items:center; font-size:18px; font-weight:750; }
+.brand-mark, .helper-icon { display:grid; place-items:center; background:#272a3d; color:#e3ba4e; border-radius:50%; width:36px; height:36px; flex-shrink:0; }
+.prototype-tag { color:#737684; font-size:12px; }
+.hero { padding:52px 0 28px; align-items:center; }
+.eyebrow { color:#7b6c41; letter-spacing:.15em; font-size:11px; }
+h1 { font-size:clamp(32px,4vw,48px); line-height:1.15; font-weight:650; letter-spacing:-1.7px; }
+h1 span { color:#81828c; }
+.subtitle { line-height:1.7; font-size:14px; }
+.overview { min-width:170px; border-left:1px solid #dddfe5; padding-left:32px; display:grid; gap:4px; }
+.overview strong { font-size:30px; font-weight:600; }
+.overview span { color:#757988; font-size:12px; }
+.overview hr { width:100%; border:0; border-top:1px solid #e3e4e8; margin:15px 0; }
+.grid { display:grid; grid-template-columns:1fr; gap:26px; }
+.panel { border-radius:16px; padding:26px; box-shadow:none; border-color:#e3e4e8; }
+.panel h2 { font-size:21px; letter-spacing:-.4px; }
+.panel-heading p { font-size:13px; }
+.count { background:#f3f2ed; font-size:13px; }
+.search-label { display:block; font-size:12px; color:#687084; margin-bottom:22px; }
+.course-search { display:block; margin-top:7px; width:100%; max-width:440px; padding:12px 14px; border:1px solid #e1e3e9; border-radius:10px; background:#fafafa; }
+.course-list { grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.course-card { border-radius:12px; display:flex; flex-direction:column; padding:20px; }
+.course-card h3 { line-height:1.4; margin:12px 0 20px; }
+.course-card p { font-size:13px; line-height:1.5; }
+.course-topline { font-size:12px; align-items:center; }
+.course-topline strong { color:#6d5b27; background:#f8f3e6; padding:5px 8px; border-radius:5px; }
+.course-topline span { white-space:nowrap; }
+.target-label { font-size:10px!important; }
+.course-actions { margin-top:auto; padding-top:14px; display:grid; gap:7px; }
+.course-card button { margin:0; font-size:12px; padding:10px; border-radius:8px; }
+.course-card .secondary-button { background:#f0f1f5; color:#33374b; }
+button:disabled { opacity:.5; cursor:not-allowed; }
+button:focus-visible, input:focus-visible { outline:3px solid #b39a54; outline-offset:3px; }
+.page-footer { display:flex; justify-content:space-between; gap:20px; font-size:12px; color:#767b89; padding:25px 0; }
+.page-footer span:last-child { max-width:60%; }
+.chat-launcher { position:fixed; right:28px; bottom:24px; z-index:30; display:flex; gap:10px; align-items:center; padding:14px 20px; border:0; border-radius:30px; color:white; background:#141622; box-shadow:0 6px 24px #15172833; font-size:13px; font-weight:600; }
+.chat-launcher span { color:#e4bd50; font-size:21px; }
+.chat-widget { position:fixed; right:28px; bottom:90px; width:370px; height:590px; max-height:calc(100dvh - 112px); z-index:30; background:#fff; border:1px solid #e3e4eb; border-radius:17px; box-shadow:0 16px 60px #181c3433; overflow:hidden; display:flex; flex-direction:column; }
+.chat-header { display:flex; gap:10px; align-items:center; background:#141622; color:#fff; padding:17px 14px; flex-shrink:0; }
+.chat-header h2 { margin:0; font-size:13px; font-weight:650; }
+.chat-header p { color:#c6c8d5; margin:5px 0 0; font-size:10px; }
+.helper-icon { width:30px; height:30px; font-size:19px; }
+.minimize { margin-left:auto; border:0; background:transparent; color:#fff; font-size:24px; padding:4px 7px; }
+.chat-widget .chat-history { display:flex; flex-direction:column; gap:14px; flex:1; min-height:0; max-height:none; margin:0; padding:20px 14px; background:#fcfcfd; overflow-y:auto; }
+.chat-message { max-width:88%; flex-shrink:0; padding:11px 13px; border:1px solid #ececf1; font-size:12px; line-height:1.55; overflow-wrap:anywhere; }
+.chat-message p { white-space:pre-wrap; margin:0; }
+.user-message { background:#161825; border-color:#161825; border-radius:13px 13px 3px 13px; }
+.assistant-message { background:white; color:#343848; border-radius:13px 13px 13px 3px; }
+.speaker-label { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.typing { color:#7b7f8c; }
+.chat-controls { padding:10px 12px 12px; border-top:1px solid #ececf0; background:#fff; flex-shrink:0; }
+.chat-widget .conversation-buttons { display:flex; gap:5px; margin:0 0 9px; flex-wrap:wrap; }
+.chat-widget .conversation-buttons button { border-radius:7px; padding:7px 8px; font-size:10px; font-weight:600; }
+.chat-widget .volume-control { display:flex; width:100%; min-width:0; gap:8px; font-size:10px; color:#747787; }
+.chat-widget .volume-control input { width:100%; min-width:0; accent-color:#25283c; }
+.chat-status { color:#777c8c; font-size:10px; margin:7px 0; max-height:30px; overflow:auto; line-height:1.5; }
+.chat-widget .command-row { display:flex; align-items:center; gap:7px; }
+.chat-widget .command-row input { flex:1; min-width:0; border-radius:24px; padding:10px 12px; font-size:11px; background:#fafafb; }
+.chat-widget .command-row .send-button { width:33px; height:33px; display:grid; place-items:center; padding:0; border-radius:50%; flex-shrink:0; background:#161825; }
+@media (max-width:1000px) { .course-list { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:600px) {
+ .page { padding:0 16px 100px; } .topbar { padding:18px 0; } .brand { font-size:15px; } .prototype-tag { font-size:9px; }
+ .hero { padding:30px 0 10px; gap:16px; align-items:stretch; } .overview { display:none; } .panel { padding:17px; } .course-list { grid-template-columns:1fr; }
+ .page-footer { flex-direction:column; } .page-footer span:last-child { max-width:100%; }
+ .chat-widget { width:calc(100vw - 24px); right:12px; bottom:82px; max-height:calc(100dvh - 98px); }
+ .chat-launcher { right:12px; bottom:16px; }
 }

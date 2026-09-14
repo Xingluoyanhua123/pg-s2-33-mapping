@@ -20,6 +20,15 @@ function getSessionId() {
 }
 
 export default function App() {
+  const [chatOpen, setChatOpen] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [search, setSearch] = useState("");
+  const historyRef = useRef(null);
+  const inputRef = useRef(null);
+  const launcherRef = useRef(null);
+  const busyRef = useRef(false);
+  const retryRef = useRef(null);
+  const soundRef = useRef({ muted: false, volume: 1 });
   const [courses, setCourses] = useState([]);
   const [mappings, setMappings] = useState([]);
   const [command, setCommand] = useState("");
@@ -43,6 +52,16 @@ const [voiceVolume, setVoiceVolume] = useState(() => {
     { role: "assistant", text: "Hello. I am ready to help with course credit mapping." }
   ]);
 
+  soundRef.current = { muted: isMuted, volume: voiceVolume };
+  useEffect(() => {
+    if (chatOpen) {
+      inputRef.current?.focus();
+      if (historyRef.current) historyRef.current.scrollTop = historyRef.current.scrollHeight;
+    }
+  }, [chatOpen]);
+  useEffect(() => {
+    if (historyRef.current) historyRef.current.scrollTop = historyRef.current.scrollHeight;
+  }, [history, busy]);
   const recognitionRef = useRef(null);
   const conversationRef = useRef(false);
   const sessionId = useMemo(() => getSessionId(), []);
@@ -67,7 +86,8 @@ const [voiceVolume, setVoiceVolume] = useState(() => {
     return () => {
       conversationRef.current = false;
       recognitionRef.current?.abort();
-      speechSynthesis?.cancel();
+      clearTimeout(retryRef.current);
+      window.speechSynthesis?.cancel();
     };
   }, []);
 
@@ -76,11 +96,11 @@ const [voiceVolume, setVoiceVolume] = useState(() => {
   }
 
 function speak(text, continueListening = false) {
-  if (!("speechSynthesis" in window) || isMuted) {
+  if (!("speechSynthesis" in window) || soundRef.current.muted) {
     setSpeaking(false);
 
     if (continueListening && conversationRef.current) {
-      setTimeout(startListening, 400);
+      scheduleListening(400);
     }
 
     return;
@@ -91,7 +111,7 @@ function speak(text, continueListening = false) {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "en-AU";
   utterance.rate = 0.98;
-  utterance.volume = voiceVolume;
+  utterance.volume = soundRef.current.volume;
 
   utterance.onstart = () => setSpeaking(true);
 
@@ -99,7 +119,7 @@ function speak(text, continueListening = false) {
     setSpeaking(false);
 
     if (continueListening && conversationRef.current) {
-      setTimeout(startListening, 500);
+      scheduleListening(500);
     }
   };
 
@@ -107,7 +127,7 @@ function speak(text, continueListening = false) {
     setSpeaking(false);
 
     if (continueListening && conversationRef.current) {
-      setTimeout(startListening, 500);
+      scheduleListening(500);
     }
   };
 
@@ -116,9 +136,10 @@ function speak(text, continueListening = false) {
 
   async function runCommand(text = command, fromVoice = false) {
     const clean = text.trim();
-    if (!clean) return;
-
-    setCommand(clean);
+    if (!clean || busyRef.current) return;
+    busyRef.current = true;
+    setBusy(true);
+    setCommand("");
     addHistory("user", clean);
     setMessage("Thinking...");
 
@@ -127,17 +148,24 @@ function speak(text, continueListening = false) {
       setMessage(result.message);
       addHistory("assistant", result.message);
       await refresh();
-      speak(result.message, fromVoice && conversationRef.current && result.should_continue);
+      if (!fromVoice || conversationRef.current) speak(result.message, fromVoice && conversationRef.current && result.should_continue);
     } catch (error) {
       const response = `Sorry, I could not reach the backend. ${error.message}`;
       setMessage(response);
       addHistory("assistant", response);
-      speak(response, fromVoice && conversationRef.current);
-    }
+      if (!fromVoice || conversationRef.current) speak(response, fromVoice && conversationRef.current);
+    } finally { busyRef.current = false; setBusy(false); }
+  }
+
+  function scheduleListening(delay) {
+    clearTimeout(retryRef.current);
+    retryRef.current = setTimeout(() => {
+      if (conversationRef.current) startListening();
+    }, delay);
   }
 
   function startListening() {
-    if (listening || speaking) return;
+    if (busyRef.current || recognitionRef.current || window.speechSynthesis?.speaking) return;
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
@@ -158,6 +186,7 @@ function speak(text, continueListening = false) {
     };
 
     recognition.onresult = async (event) => {
+      recognitionRef.current = null;
       setListening(false);
       const transcript = event.results[0][0].transcript.trim();
       setCommand(transcript);
@@ -168,7 +197,7 @@ function speak(text, continueListening = false) {
       setListening(false);
       if (event.error === "no-speech" && conversationRef.current) {
         setMessage("No speech detected. Listening again...");
-        setTimeout(startListening, 700);
+        scheduleListening(700);
         return;
       }
       if (event.error !== "aborted") {
@@ -176,9 +205,9 @@ function speak(text, continueListening = false) {
       }
     };
 
-    recognition.onend = () => setListening(false);
+    recognition.onend = () => { if (recognitionRef.current === recognition) recognitionRef.current = null; setListening(false); };
     recognitionRef.current = recognition;
-    recognition.start();
+    try { recognition.start(); } catch (error) { recognitionRef.current = null; setListening(false); setMessage(error.message); }
   }
 
   function toggleMute() {
@@ -205,8 +234,10 @@ function speak(text, continueListening = false) {
 
   function stopConversation() {
     conversationRef.current = false;
+    clearTimeout(retryRef.current);
     setConversationMode(false);
     recognitionRef.current?.abort();
+    recognitionRef.current = null;
     window.speechSynthesis?.cancel();
     setListening(false);
     setSpeaking(false);
@@ -214,154 +245,77 @@ function speak(text, continueListening = false) {
   }
 
   async function handleAdd(courseId) {
-    const mapping = await createMapping(courseId);
-    const response = `Mapping ready: ${mapping.source_course_code} to ${mapping.target_course_code}.`;
-    setMessage(response);
-    await refresh();
-    speak(response);
+    try {
+      const mapping = await createMapping(courseId);
+      setMessage(`Mapping ready: ${mapping.source_course_code} to ${mapping.target_course_code}.`);
+      await refresh();
+    } catch (error) { setMessage(error.message); }
   }
 
   async function handleDelete(mappingId) {
-    await deleteMapping(mappingId);
-    setMessage("Mapping deleted.");
-    await refresh();
-    speak("Mapping deleted.");
+    try { await deleteMapping(mappingId); await refresh(); setMessage("Mapping deleted."); }
+    catch (error) { setMessage(error.message); }
   }
+
+  function closeChat() {
+    stopConversation();
+    setChatOpen(false);
+    launcherRef.current?.focus();
+  }
+
+  const visibleCourses = courses.filter(course =>
+    `${course.code} ${course.name}`.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="page">
+      <nav className="topbar"><span className="brand"><span className="brand-mark">✦</span> Course Mapping</span><span className="prototype-tag">PG-S2-33 · Prototype</span></nav>
       <header className="hero">
-        <div>
-          <p className="eyebrow">PG-S2-33 · Voice Prototype v2</p>
-          <h1>Voice Course Credit Mapping</h1>
-          <p className="subtitle">Speak naturally, confirm a mapping, and hear the result.</p>
-        </div>
-        <div className="status-pill">{conversationMode ? "Conversation ON" : "Conversation OFF"}</div>
+        <div><p className="eyebrow">YOUR COURSE WORKSPACE</p><h1>Explore your courses.<br /><span>Plan your next step.</span></h1>
+          <p className="subtitle">Browse course information and review potential credit mappings.<br />Need a hand? Ask the assistant in the bottom-right corner.</p></div>
+        <div className="overview"><strong>{courses.length}</strong><span>available courses</span><hr /><strong>{mappings.length}</strong><span>current mappings</span></div>
       </header>
-
       <main className="grid">
-        <section className="panel voice-panel">
-          <div className="panel-heading">
-            <div>
-              <h2>Voice Assistant</h2>
-              <p>Try “Map Database Systems”, then answer “Yes”.</p>
-            </div>
-            <strong>{speaking ? "🔊 Speaking" : listening ? "🎙 Listening" : "● Ready"}</strong>
-          </div>
-
-          <div className="conversation-buttons">
-            {!conversationMode ? (
-              <button className="primary-button" onClick={startConversation}>🎙 Start Conversation</button>
-            ) : (
-              <button className="stop-button" onClick={stopConversation}>■ Stop Conversation</button>
-            )}
-            <button className="secondary-button" onClick={startListening} disabled={listening || speaking}>Speak Once</button>
-          </div>
-          <div className="sound-controls">
-            <button
-              type="button"
-              className="secondary-button"
-              onClick={toggleMute}
-              aria-pressed={isMuted}
-            >
-              {isMuted ? "Unmute" : "Mute"}
-            </button>
-
-            <label className="volume-control">
-              <span>Volume</span>
-
-              <input
-                type="range"
-                min="0"
-                max="100"
-                step="5"
-                value={Math.round(voiceVolume * 100)}
-                disabled={isMuted}
-                onChange={(event) => {
-                  setVoiceVolume(Number(event.target.value) / 100);
-                }}
-              />
-
-              <span>{isMuted ? 0 : Math.round(voiceVolume * 100)}%</span>
-            </label>
-          </div>
-
-          <div className="command-row">
-            <input
-              value={command}
-              onChange={(e) => setCommand(e.target.value)}
-              placeholder="Type a command, e.g. Map MATH101"
-              onKeyDown={(e) => e.key === "Enter" && runCommand()}
-            />
-            <button className="primary-button" onClick={() => runCommand()}>Send</button>
-          </div>
-
-          <div className="message-box">{message}</div>
-        </section>
-
-        <section className="panel conversation-panel">
-          <h2>Conversation</h2>
-          <div className="chat-history">
-            {history.map((item, index) => (
-              <div key={index} className={`chat-message ${item.role === "user" ? "user-message" : "assistant-message"}`}>
-                <strong>{item.role === "user" ? "You" : "Assistant"}</strong>
-                <p>{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="panel">
-          <div className="panel-heading">
-            <div><h2>Available Courses</h2><p>Prototype data.</p></div>
-            <span className="count">{courses.length}</span>
-          </div>
+        <section className="panel courses-panel">
+          <div className="panel-heading"><div><h2>Available Courses</h2><p>Explore the course catalogue.</p></div><span className="count">{visibleCourses.length}</span></div>
+          <label className="search-label">Search courses<input className="course-search" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search by course name or code…" /></label>
           <div className="course-list">
-            {courses.map((course) => (
+            {visibleCourses.map(course => (
               <article className="course-card" key={course.id}>
                 <div className="course-topline"><strong>{course.code}</strong><span>{course.units} units</span></div>
                 <h3>{course.name}</h3>
-                <p>{course.suggested_target_code} · {course.suggested_target_name}</p>
-                <button className="primary-button" onClick={() => handleAdd(course.id)}>Add Mapping</button>
+                <p className="target-label">Suggested target</p>
+                <p>{course.suggested_target_code === "PENDING" ? "Awaiting university review" : `${course.suggested_target_code} · ${course.suggested_target_name}`}</p>
+                <div className="course-actions"><button className="secondary-button" onClick={() => { setCommand(`What are the main learning outcomes of ${course.code}?`); setChatOpen(true); inputRef.current?.focus(); }}>Ask assistant ↗</button>
+                  <button className="primary-button" disabled={course.suggested_target_code === "PENDING"} onClick={() => handleAdd(course.id)}>{course.suggested_target_code === "PENDING" ? "Review pending" : "Add Mapping"}</button></div>
               </article>
             ))}
           </div>
+          {visibleCourses.length === 0 && <p className="empty-state">{courses.length ? "No courses match your search." : "No courses loaded. Check that the backend is running."}</p>}
         </section>
-
         <section className="panel mappings-panel">
-          <div className="panel-heading">
-            <div><h2>Current Mappings</h2><p>Created through button, text, or voice.</p></div>
-            <span className="count">{mappings.length}</span>
-          </div>
-          {mappings.length === 0 ? (
-            <div className="empty-state">No mappings yet.</div>
-          ) : (
-            <div className="mapping-table-wrap">
-              <table>
-                <thead><tr><th>Source</th><th>Target</th><th>Status</th><th></th></tr></thead>
-                <tbody>
-                  {mappings.map((m) => (
-                    <tr key={m.id}>
-                      <td><strong>{m.source_course_code}</strong><div>{m.source_course_name}</div></td>
-                      <td><strong>{m.target_course_code}</strong><div>{m.target_course_name}</div></td>
-                      <td><span className="decision">{m.decision}</span></td>
-                      <td><button className="delete-button" onClick={() => handleDelete(m.id)}>Delete</button></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </section>
-
-        <section className="panel architecture-panel">
-          <h2>Voice Flow</h2>
-          <div className="architecture-flow">
-            <span>🎙 Microphone</span><b>→</b><span>Speech-to-Text</span><b>→</b><span>React</span><b>→</b>
-            <span>FastAPI</span><b>→</b><span>Service</span><b>→</b><span>Repository</span><b>→</b><span>🔊 TTS</span>
-          </div>
+          <div className="panel-heading"><div><h2>Current Mappings</h2><p>Suggested mappings require university review.</p></div><span className="count">{mappings.length}</span></div>
+          {mappings.length === 0 ? <div className="empty-state">Your mappings will appear here once added.</div> :
+            <div className="mapping-table-wrap"><table><thead><tr><th>Source</th><th>Target</th><th>Status</th><th>Action</th></tr></thead><tbody>
+              {mappings.map(m => <tr key={m.id}><td><strong>{m.source_course_code}</strong><div>{m.source_course_name}</div></td><td><strong>{m.target_course_code}</strong><div>{m.target_course_name}</div></td><td><span className="decision">{m.decision}</span></td><td><button className="delete-button" onClick={() => handleDelete(m.id)}>Delete</button></td></tr>)}
+            </tbody></table></div>}
         </section>
       </main>
+      <footer className="page-footer"><span>Course credit mapping · Student prototype</span><span role="status">{chatOpen ? "Assistant open" : message}</span></footer>
+      <button ref={launcherRef} className="chat-launcher" aria-label={chatOpen ? "Close assistant" : "Open assistant"} aria-expanded={chatOpen} aria-controls="mapping-chat" onClick={() => chatOpen ? closeChat() : setChatOpen(true)}><span aria-hidden="true">{chatOpen ? "×" : "✦"}</span>{chatOpen ? "Close" : "Ask AI Helper"}</button>
+      {chatOpen && <section id="mapping-chat" className="chat-widget" role="dialog" aria-modal="false" aria-labelledby="chat-title" onKeyDown={e => { if (e.key === "Escape") closeChat(); }}>
+        <header className="chat-header"><span className="helper-icon" aria-hidden="true">✦</span><div><h2 id="chat-title">Adelaide Mapping AI Helper</h2><p>Course mapping support</p></div><button className="minimize" aria-label="Minimize assistant" onClick={closeChat}>−</button></header>
+        <div ref={historyRef} className="chat-history" role="log" aria-label="Conversation" aria-live="polite">
+          {history.map((item, index) => <div key={index} className={`chat-message ${item.role === "user" ? "user-message" : "assistant-message"}`}><span className="speaker-label">{item.role === "user" ? "You" : "Assistant"}</span><p>{item.text}</p></div>)}
+          {busy && <div className="chat-message assistant-message typing">Thinking…</div>}
+        </div>
+        <div className="chat-controls">
+          <div className="conversation-buttons"><button className="secondary-button" disabled={busy || listening || speaking} onClick={startListening}>🎙 Speak</button><button className={conversationMode ? "stop-button" : "secondary-button"} disabled={!conversationMode && busy} onClick={conversationMode ? stopConversation : startConversation}>{conversationMode ? "Stop conversation" : "Start conversation"}</button><button className="secondary-button" onClick={toggleMute} aria-pressed={isMuted}>{isMuted ? "Unmute" : "Mute"}</button></div>
+          <label className="volume-control"><span>Volume</span><input type="range" min="0" max="100" step="5" value={Math.round(voiceVolume * 100)} disabled={isMuted} onChange={e => setVoiceVolume(Number(e.target.value) / 100)} /><span>{isMuted ? 0 : Math.round(voiceVolume * 100)}%</span></label>
+          <p className="chat-status" role="status">{busy ? "Waiting for an answer…" : speaking ? "Speaking…" : listening ? "Listening…" : message === "Ready." ? "Type a question or use your microphone." : message}</p>
+          <form className="command-row" onSubmit={e => { e.preventDefault(); runCommand(); }}><input ref={inputRef} aria-label="Message the assistant" value={command} onChange={e => setCommand(e.target.value)} placeholder="Ask about a course or mapping…" /><button aria-label="Send message" className="send-button" disabled={busy || !command.trim()} type="submit">➤</button></form>
+        </div>
+      </section>}
     </div>
   );
 }

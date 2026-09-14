@@ -243,19 +243,24 @@ Rules:
                     response.read().decode("utf-8")
                 )
 
+            print(
+                f"[MODEL CHECK] requested={self.ollama_model}, "
+                f"returned={result.get('model', 'unknown')}",
+                flush=True,
+            )
+            
             answer = (
                 result.get("message", {})
                 .get("content", "")
                 .strip()
             )
+            if not answer:
+                raise ValueError("Ollama returned an empty answer")
             if "university review" not in answer.lower():
                 answer += (
                     " Any final credit mapping must be reviewed "
                     "and approved by the university."
                 )
-     
-            if not answer:
-                raise ValueError("Ollama returned an empty answer")
 
             return VoiceCommandResult(
                 action="ai_answer",
@@ -269,12 +274,12 @@ Rules:
             ValueError,
             json.JSONDecodeError,
         ) as error:
-            logger.exception("Unable to call Hermes: %s", error)
+            logger.exception("Unable to call model %s: %s", self.ollama_model, error)
 
             return VoiceCommandResult(
                 action="model_error",
                 message=(
-                    "I could not reach the local Hermes model. "
+                    f"The local model {self.ollama_model} did not return a valid answer. "
                     "Please check that Ollama is running and try again."
                 ),
             )   
